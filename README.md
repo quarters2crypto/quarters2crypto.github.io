@@ -142,7 +142,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: url("Quarters2Crypto/Q2C Pics/ChatGPT Image Feb 14, 2026, 01_02_49 PM.png") center 28% / cover no-repeat;
+      background: url("Quarters2Crypto/Q2C%20Pics/ChatGPT%20Image%20Feb%2014%2C%202026%2C%2001_02_49%20PM.png") center 28% / cover no-repeat;
       opacity: 0.28; z-index: 0;
     }
     .hero-bg::after {
@@ -530,7 +530,7 @@
 ════════════════════════════════════════════════ -->
 <nav id="nav">
   <a href="#hero" class="nav-brand">
-    <img src="Quarters2Crypto/Q2C Pics/quarter2crypto_icon_v2.svg" alt="Q2C Icon">
+    <img src="Quarters2Crypto/Q2C%20Pics/quarter2crypto_icon_v2.svg" alt="Q2C Icon">
     <span class="nav-brand-text">Quarters2Crypto</span>
   </a>
   <ul class="nav-links" id="nav-links">
@@ -554,7 +554,7 @@
   <div class="wrap">
     <div class="hero-inner">
       <p class="hero-alias">Quarters2Crypto · Field Notes from the Frontier</p>
-      <img src="Quarters2Crypto/Q2C Pics/quarter2crypto_icon_v2.svg" alt="Q2C Emblem" class="hero-icon">
+      <img src="Quarters2Crypto/Q2C%20Pics/quarter2crypto_icon_v2.svg" alt="Q2C Emblem" class="hero-icon">
       <h1 class="grad-text">Turn Curiosity<br>Into Coin.</h1>
       <p class="hero-sub">
         Real-world experiments in Web3 income — without hype, without guru nonsense.
@@ -605,7 +605,7 @@
       </div>
       <div class="story-orb-wrap rv">
         <div class="story-orb">
-          <img src="Quarters2Crypto/Q2C Pics/quarter2crypto_icon_v2.svg" alt="Q2C Emblem">
+          <img src="Quarters2Crypto/Q2C%20Pics/quarter2crypto_icon_v2.svg" alt="Q2C Emblem">
         </div>
       </div>
     </div>
@@ -936,7 +936,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="Quarters2Crypto/Q2C Pics/quarter2crypto_logo.svg" alt="Quarters2Crypto">
+        <img src="Quarters2Crypto/Q2C%20Pics/quarter2crypto_logo.svg" alt="Quarters2Crypto">
         <p>Real-world experiments in Web3 income. Built in public by Flaveon. No hype. Just field notes.</p>
       </div>
       <div class="footer-col">
