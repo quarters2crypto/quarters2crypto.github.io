@@ -1,0 +1,271 @@
+{
+  "meta": {
+    "title": "Quarters2Crypto - Practical Crypto Field Notes",
+    "description": "Practical crypto field notes for people navigating the digital economy. Wallet-tested tools, security habits, market context, AI-assisted workflows, and real-world experiments by Flaveon."
+  },
+  "branding": {
+    "hero_image": "/media/images/q2c-hero-bg.png",
+    "icon_image": "/media/images/q2c-icon.png",
+    "logo_image": "/media/images/q2c-logo.png"
+  },
+  "hero": {
+    "alias": "Quarters2Crypto - Bridging Crypto and Real Life",
+    "headline_lines": [
+      "Make modern crypto",
+      "more useful."
+    ],
+    "summary": "Q2C translates wallets, digital assets, AI-assisted tools, and online earning experiments into practical field notes for ordinary people. Less hype. More signal. More agency.",
+    "primary_label": "Explore the Topics",
+    "primary_href": "#what-here",
+    "secondary_label": "Read on Substack",
+    "secondary_href": "https://substack.com/@quarters2crypto"
+  },
+  "story": {
+    "eyebrow": "Why This Exists",
+    "title_lines": [
+      "From missed Bitcoin",
+      "to practical tech."
+    ],
+    "paragraphs": [
+      "I heard about Bitcoin early, understood just enough to know it mattered, and still missed the moment. That turned into a long-running pattern: curiosity first, confusion second, hard-earned lessons third.",
+      "Over time, Q2C became less about chasing moonshots and more about translating the digital economy into something regular people can actually use. Wallet apps, reward systems, AI tooling, self-custody, online income experiments, and the messy space where emerging tech touches everyday life.",
+      "ConcordiaPax is about bridging worlds. Q2C is one doorway into that mission: make advanced systems more understandable, more honest, and more practical for the people actually trying to build resilient lives.",
+      "I am not here to posture as a guru. I am here to test things, document what is real, flag what is risky, and leave readers with more clarity than they had before they arrived."
+    ],
+    "quote": "If a tool only works for insiders, it is not finished yet.",
+    "tag": "Useful over flashy. Honest over loud. Human-first by default."
+  },
+  "topics": {
+    "eyebrow": "Coverage Areas",
+    "title": "The topic stack.",
+    "subtitle": "Coverage built around utility, literacy, and self-reliance in the digital economy.",
+    "note": "Useful over flashy. Signal over slogans.",
+    "items": [
+      {
+        "icon": "🔬",
+        "title": "Wallet and App Reviews",
+        "description": "What real users are being asked to trust right now, with attention to onboarding, fees, UX friction, and operational risk.",
+        "badge": "Free",
+        "badge_tone": "free"
+      },
+      {
+        "icon": "📊",
+        "title": "Onchain Income Experiments",
+        "description": "Small-scale tests around rewards, incentives, and digital earning paths, with clear caveats about volatility and limits.",
+        "badge": "Free",
+        "badge_tone": "free"
+      },
+      {
+        "icon": "🤖",
+        "title": "AI + Crypto Tooling",
+        "description": "Workflows, assistants, OCR, automation, and research tools that make technical systems more usable for everyday builders.",
+        "badge": "Free",
+        "badge_tone": "free"
+      },
+      {
+        "icon": "🛡️",
+        "title": "Security and Self-Custody",
+        "description": "Wallet hygiene, authentication habits, scam patterns, and practical safeguards for people holding their own keys and accounts.",
+        "badge": "Newsletter",
+        "badge_tone": "newsletter"
+      },
+      {
+        "icon": "📰",
+        "title": "Market Context Without Theater",
+        "description": "What changed, why it matters, and how to think about it without influencer melodrama or fake certainty.",
+        "badge": "Free",
+        "badge_tone": "free"
+      },
+      {
+        "icon": "🌉",
+        "title": "Real-World Bridge Cases",
+        "description": "Where digital assets, online commerce, creators, communities, and practical technology start connecting in useful ways.",
+        "badge": "Newsletter",
+        "badge_tone": "newsletter"
+      }
+    ]
+  },
+  "model": {
+    "eyebrow": "The Model",
+    "title": "How Q2C works.",
+    "tiers": [
+      {
+        "label": "Open Site",
+        "title": "Public Field Notes",
+        "description": "The core layer: open, practical, and readable without insider vocabulary.",
+        "items": [
+          "Wallet and app teardowns",
+          "Plain-language explainers and quick guides",
+          "Market context and editorial framing",
+          "Security notes and caution flags",
+          "Working experiments and visible lessons"
+        ],
+        "note": "",
+        "tone": "free"
+      },
+      {
+        "label": "Newsletter",
+        "title": "Deeper Briefings",
+        "description": "Longer notes, earlier drafts, tighter workflows, and sharper context for people following closely.",
+        "items": [
+          "Tool shortlists and experiment logs",
+          "AI-assisted research briefings with clear caveats",
+          "Early looks at subscriber-only deep dives",
+          "Signal Pick with open and paid variants",
+          "More context around practical next steps"
+        ],
+        "note": "The goal is not dependency. It is helping readers think, choose, and act for themselves.",
+        "tone": "newsletter"
+      }
+    ]
+  },
+  "signal_pick": {
+    "title": "Signal Pick",
+    "description": "One app, workflow, tool, or opportunity worth a closer look each cycle. AI can help with research, but the point is still human judgment, clear caveats, and practical usefulness.",
+    "ai_notice_label": "AI-Assisted Research",
+    "ai_notice_body": "Signal Pick may be researched and first-drafted with AI support. All picks are reviewed, but they are not professionally certified or guaranteed. This is not financial advice. Not a recommendation to buy, sell, or use any product. All opinions are for informational purposes only. Do your own research before acting on anything here.",
+    "record_title": "Signal Pick - All-Time Record",
+    "tracker_note": "Tracker launches with the first published review framework. Outcomes will be defined by stated criteria, not hindsight marketing.",
+    "badges": [
+      {
+        "label": "Open Brief",
+        "tone": "free"
+      },
+      {
+        "label": "Deep Brief",
+        "tone": "newsletter"
+      }
+    ],
+    "cta_label": "Subscribe for the Deep Briefs",
+    "cta_href": "https://substack.com/@quarters2crypto",
+    "disclaimer": "AI-assisted. Human-reviewed. Advisory when uncertainty is high. Personal opinion, not professional guidance."
+  },
+  "roadmap": {
+    "eyebrow": "Roadmap",
+    "title": "Where this is going.",
+    "subtitle": "Q2C is one bridge inside the wider ConcordiaPax ecosystem.",
+    "items": [
+      {
+        "phase": "Phase 01",
+        "title": "Editorial Lab",
+        "description": "Site, newsletter, guides, and a cleaner archive of field-tested notes people can actually reuse.",
+        "status": "In Motion"
+      },
+      {
+        "phase": "Phase 02",
+        "title": "Tooling Bench",
+        "description": "Checklists, calculators, dashboards, and small utilities that reduce friction around digital assets and online systems.",
+        "status": "Coming Soon"
+      },
+      {
+        "phase": "Phase 03",
+        "title": "AI for Regular People",
+        "description": "Applied AI workflows that support literacy, research, and execution without pretending everyone wants to become an engineer.",
+        "status": "In Design"
+      },
+      {
+        "phase": "Phase 04",
+        "title": "Digital Economy Guides",
+        "description": "More grounded coverage of commerce rails, creator tooling, reward systems, and where crypto intersects with ordinary work.",
+        "status": "In Development"
+      },
+      {
+        "phase": "Phase 05",
+        "title": "Security Literacy",
+        "description": "Simple risk habits, account hygiene, and self-custody education that helps readers become more independent and resilient.",
+        "status": "Planned"
+      },
+      {
+        "phase": "Phase 06",
+        "title": "ConcordiaPax Bridge",
+        "description": "Stronger connective tissue between Q2C, practical AI systems, and the broader ConcordiaPax mission of useful technology.",
+        "status": "Planned"
+      }
+    ]
+  },
+  "cta_final": {
+    "eyebrow": "Start Here",
+    "title_prefix": "Start with the",
+    "title_highlight": "useful stuff",
+    "title_suffix": ".",
+    "description": "Follow the field notes, keep the caveats, and use what helps. Leave the theater behind.",
+    "primary_label": "Read the Origin",
+    "primary_href": "#story",
+    "secondary_label": "Subscribe for Updates",
+    "secondary_href": "https://substack.com/@quarters2crypto"
+  },
+  "legal": {
+    "eyebrow": "Important Disclosures",
+    "title": "Legal and Disclaimers",
+    "summary_blocks": [
+      {
+        "title": "Not Financial Advice",
+        "body": "All content published on Quarters2Crypto - including articles, reviews, newsletters, videos, and social media posts - is for informational and entertainment purposes only. Nothing on this site constitutes financial advice, investment advice, trading advice, or any other form of professional financial guidance."
+      },
+      {
+        "title": "Not a Fiduciary",
+        "body": "Flaveon and Quarters2Crypto are not registered investment advisors, broker-dealers, financial planners, or fiduciaries of any kind. We hold no professional financial licenses and do not provide personalized financial, legal, or tax advice."
+      },
+      {
+        "title": "Do Your Own Research",
+        "body": "Crypto assets are highly speculative and volatile. Past performance is not indicative of future results. Any mention of specific projects, platforms, tokens, or strategies reflects personal experience and opinion only."
+      },
+      {
+        "title": "Experimental Content",
+        "body": "Some coverage here involves emerging tools, experimental workflows, or early-stage systems. We aim to tell the truth clearly about what is known, what is uncertain, and what is still being tested. Not every experiment becomes a recommendation."
+      }
+    ],
+    "detail_blocks": [
+      {
+        "title": "Technology and AI Content",
+        "paragraphs": [
+          "Quarters2Crypto may feature automation, AI-assisted research, and software-oriented workflows. These materials are presented for informational and educational purposes only. We do not guarantee that any tool, model, service, or workflow will be suitable for your environment, your business, or your risk tolerance.",
+          "AI-assisted outputs may be incomplete, mistaken, stale, or context-limited. When uncertainty is high or consequences are material, advisory framing matters more than speed.",
+          "Use judgment. Verify important claims. Treat convenience as a tool, not as proof."
+        ]
+      },
+      {
+        "title": "Cryptocurrency Risk Warning",
+        "paragraphs": [
+          "Investing in, trading, or otherwise engaging with cryptocurrencies and digital assets carries significant financial risk, including the possibility of total and permanent loss of capital. The cryptocurrency market is largely unregulated in many jurisdictions, subject to extreme price volatility, susceptible to hacking, technical failure, and fraud, and may be materially affected by regulatory changes at any time and without notice.",
+          "Wallet usage, onchain incentives, protocol participation, yield strategies, and new digital platforms carry additional smart contract risk, counterparty risk, operational risk, and liquidity risk. Examples discussed on this site are not typical and not guaranteed.",
+          "Only engage with capital, platforms, and workflows you are prepared to evaluate and, if necessary, walk away from entirely."
+        ]
+      },
+      {
+        "title": "Affiliate and Sponsorship Disclosure",
+        "paragraphs": [
+          "Some content on this site may involve affiliate relationships, referral codes, or sponsored placements. When this is the case, it will be clearly and prominently disclosed within the relevant content prior to or at the point of any recommendation.",
+          "Affiliate relationships do not influence our editorial decisions, assessments, or ratings. We only feature platforms and products we have personally evaluated. Compensation received, if any, does not constitute an endorsement of quality, safety, or suitability for any particular user."
+        ]
+      }
+    ],
+    "stamp_lines": [
+      "Copyright 2026 Quarters2Crypto - quarters2crypto.com - All rights reserved.",
+      "Practical field notes only. Not financial advice. Not legal advice. Not tax advice. Verify what matters and keep your own judgment switched on."
+    ]
+  },
+  "footer": {
+    "brand_blurb": "Practical field notes for the digital economy. Built in public by Flaveon. Useful over flashy.",
+    "connect_links": [
+      {
+        "label": "Newsletter",
+        "url": "https://substack.com/@quarters2crypto"
+      },
+      {
+        "label": "YouTube",
+        "url": "https://www.youtube.com/channel/UC3O_UpBRqOg7PBhRPRUqhTw"
+      },
+      {
+        "label": "Twitter / X",
+        "url": "https://x.com/flaveon316"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/Flaveon"
+      }
+    ],
+    "bottom_left": "Copyright 2026 Quarters2Crypto - Not financial advice.",
+    "bottom_right": "Bridging crypto and real life."
+  }
+}

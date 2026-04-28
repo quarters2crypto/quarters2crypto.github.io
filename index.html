@@ -167,7 +167,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: url("Quarters2Crypto/Q2C%20Pics/ChatGPT%20Image%20Feb%2014%2C%202026%2C%2001_02_49%20PM.png") center 28% / cover no-repeat;
+      background: url("/media/images/q2c-hero-bg.png") center 28% / cover no-repeat;
       opacity: 0.28; z-index: 0;
     }
     .hero-bg::after {
@@ -558,7 +558,7 @@
 ════════════════════════════════════════════════ -->
 <nav id="nav">
   <a href="#hero" class="nav-brand">
-    <img src="Quarters2Crypto/Q2C%20Pics/quarter2crypto_icon_v2.png" alt="Q2C Icon">
+    <img id="nav-brand-icon" src="/media/images/q2c-icon.png" alt="Q2C Icon">
     <span class="nav-brand-text">Quarters2Crypto</span>
   </a>
   <ul class="nav-links" id="nav-links">
@@ -567,7 +567,7 @@
     <li><a href="#how-it-works">Model</a></li>
     <li><a href="#coming">Roadmap</a></li>
     <li><a href="#legal">Legal</a></li>
-    <li><a href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="nav-sub">Subscribe</a></li>
+    <li><a id="nav-subscribe-link" href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="nav-sub">Subscribe</a></li>
   </ul>
   <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle menu">
     <span></span><span></span><span></span>
@@ -578,19 +578,19 @@
      HERO
 ════════════════════════════════════════════════ -->
 <section id="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg" id="hero-bg"></div>
   <div class="wrap">
     <div class="hero-inner">
-      <p class="hero-alias">Quarters2Crypto · Bridging Crypto and Real Life</p>
-      <img src="Quarters2Crypto/Q2C%20Pics/quarter2crypto_icon_v2.png" alt="Q2C Emblem" class="hero-icon">
-      <h1 class="grad-text">Make modern crypto<br>more useful.</h1>
-      <p class="hero-sub">
+      <p class="hero-alias" id="hero-alias">Quarters2Crypto · Bridging Crypto and Real Life</p>
+      <img id="hero-icon" src="/media/images/q2c-icon.png" alt="Q2C Emblem" class="hero-icon">
+      <h1 class="grad-text" id="hero-headline">Make modern crypto<br>more useful.</h1>
+      <p class="hero-sub" id="hero-summary">
         Q2C translates wallets, digital assets, AI-assisted tools, and online earning experiments
         into practical field notes for ordinary people. Less hype. More signal. More agency.
       </p>
       <div class="hero-ctas">
-        <a href="#what-here" class="btn btn-fill">Explore the Topics</a>
-        <a href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-outline">Read on Substack</a>
+        <a id="hero-primary-cta" href="#what-here" class="btn btn-fill">Explore the Topics</a>
+        <a id="hero-secondary-cta" href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-outline">Read on Substack</a>
       </div>
     </div>
   </div>
@@ -603,9 +603,10 @@
   <div class="wrap">
     <div class="story-grid">
       <div class="story-copy rv">
-        <span class="eyebrow">Why This Exists</span>
-        <h2>From missed Bitcoin<br>to practical tech.</h2>
+        <span class="eyebrow" id="story-eyebrow">Why This Exists</span>
+        <h2 id="story-title">From missed Bitcoin<br>to practical tech.</h2>
         <div class="divider"></div>
+        <div id="story-paragraphs">
         <p>
           I heard about Bitcoin early, understood just enough to know it mattered, and still
           missed the moment. That turned into a long-running pattern: curiosity first, confusion
@@ -617,7 +618,7 @@
           systems, AI tooling, self-custody, online income experiments, and the messy space
           where emerging tech touches everyday life.
         </p>
-        <div class="pull-quote">
+        <div class="pull-quote" id="story-quote">
           "If a tool only works for insiders, it is not finished yet."
         </div>
         <p>
@@ -630,11 +631,12 @@
           document what is real, flag what is risky, and leave readers with more clarity than
           they had before they arrived.
         </p>
-        <span class="story-tag">Useful over flashy. Honest over loud. Human-first by default.</span>
+        </div>
+        <span class="story-tag" id="story-tag">Useful over flashy. Honest over loud. Human-first by default.</span>
       </div>
       <div class="story-orb-wrap rv">
         <div class="story-orb">
-          <img src="Quarters2Crypto/Q2C%20Pics/quarter2crypto_icon_v2.png" alt="Q2C Emblem">
+          <img id="story-icon" src="/media/images/q2c-icon.png" alt="Q2C Emblem">
         </div>
       </div>
     </div>
@@ -647,12 +649,12 @@
 <section id="what-here">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow">Coverage Areas</span>
-      <h2>The topic stack.</h2>
+      <span class="eyebrow" id="topics-eyebrow">Coverage Areas</span>
+      <h2 id="topics-title">The topic stack.</h2>
       <div class="divider c"></div>
-      <p class="sec-sub">Coverage built around utility, literacy, and self-reliance in the digital economy.</p>
+      <p class="sec-sub" id="topics-subtitle">Coverage built around utility, literacy, and self-reliance in the digital economy.</p>
     </div>
-    <div class="features">
+    <div class="features" id="topics-grid">
       <div class="f-card rv">
         <span class="f-icon">🔬</span>
         <h3>Wallet &amp; App Reviews</h3>
@@ -690,7 +692,7 @@
         <span class="badge b-sub">Newsletter</span>
       </div>
     </div>
-    <p class="features-note">Useful over flashy. Signal over slogans.</p>
+    <p class="features-note" id="topics-note">Useful over flashy. Signal over slogans.</p>
   </div>
 </section>
 
@@ -700,11 +702,11 @@
 <section id="how-it-works">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow">The Model</span>
-      <h2>How Q2C works.</h2>
+      <span class="eyebrow" id="model-eyebrow">The Model</span>
+      <h2 id="model-title">How Q2C works.</h2>
       <div class="divider c"></div>
     </div>
-    <div class="tiers">
+    <div class="tiers" id="model-tiers">
       <div class="tier t-free rv">
         <span class="tier-label">Open Site</span>
         <h3>Public Field Notes</h3>
@@ -741,8 +743,8 @@
   <div class="wrap">
     <div class="pick-wrap rv">
       <span class="pick-icon">✦</span>
-      <h2><span>Signal Pick</span></h2>
-      <p>
+      <h2><span id="signal-title">Signal Pick</span></h2>
+      <p id="signal-description">
         One app, workflow, tool, or opportunity worth a closer look each cycle. AI can help with
         research, but the point is still human judgment, clear caveats, and practical usefulness.
       </p>
@@ -760,10 +762,8 @@
         line-height: 1.7;
         text-align: left;
       ">
-        <strong style="color:var(--indigo); letter-spacing:0.08em; text-transform:uppercase; font-size:0.66rem;">⚙ AI-Assisted Research</strong><br>
-        Signal Pick may be researched and first-drafted with AI support. All picks are reviewed, but they are not professionally certified or guaranteed.
-        <strong style="color:var(--text)">This is not financial advice.</strong> Not a recommendation to buy, sell, or use any product.
-        All opinions are for informational purposes only. Do your own research before acting on anything here.
+        <strong id="signal-ai-label" style="color:var(--indigo); letter-spacing:0.08em; text-transform:uppercase; font-size:0.66rem;">⚙ AI-Assisted Research</strong><br>
+        <span id="signal-ai-body">Signal Pick may be researched and first-drafted with AI support. All picks are reviewed, but they are not professionally certified or guaranteed. This is not financial advice. Not a recommendation to buy, sell, or use any product. All opinions are for informational purposes only. Do your own research before acting on anything here.</span>
       </div>
 
       <!-- Win / Loss Tracker -->
@@ -783,7 +783,7 @@
           color: var(--muted);
           border-bottom: 1px solid rgba(245,166,35,0.12);
           text-align: left;
-        ">Signal Pick — All-Time Record</div>
+        " id="signal-record-title">Signal Pick — All-Time Record</div>
         <div style="display:grid; grid-template-columns: repeat(3,1fr);">
           <div style="padding:1rem; text-align:center; border-right:1px solid rgba(245,166,35,0.1);">
             <div style="font-size:1.6rem; font-weight:800; color:#4ade80;" id="rp-wins">—</div>
@@ -804,15 +804,15 @@
           font-size: 0.7rem; color: rgba(182,176,167,0.6);
           font-style: italic; text-align: left;
           border-top: 1px solid rgba(245,166,35,0.08);
-        ">Tracker launches with the first published review framework. Outcomes will be defined by stated criteria, not hindsight marketing.</div>
+        " id="signal-tracker-note">Tracker launches with the first published review framework. Outcomes will be defined by stated criteria, not hindsight marketing.</div>
       </div>
 
-      <div class="pick-badges">
+      <div class="pick-badges" id="signal-badges">
         <span class="pick-badge pb-free">Open Brief</span>
         <span class="pick-badge pb-paid">Deep Brief</span>
       </div>
-      <a href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-fill">Subscribe for the Deep Briefs</a>
-      <p class="pick-disclaimer">
+      <a id="signal-cta" href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-fill">Subscribe for the Deep Briefs</a>
+      <p class="pick-disclaimer" id="signal-disclaimer">
         AI-assisted. Human-reviewed. Advisory when uncertainty is high. Personal opinion, not professional guidance.
       </p>
     </div>
@@ -825,12 +825,12 @@
 <section id="coming">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow">Roadmap</span>
-      <h2>Where this is going.</h2>
+      <span class="eyebrow" id="roadmap-eyebrow">Roadmap</span>
+      <h2 id="roadmap-title">Where this is going.</h2>
       <div class="divider c"></div>
-      <p class="sec-sub">Q2C is one bridge inside the wider ConcordiaPax ecosystem.</p>
+      <p class="sec-sub" id="roadmap-subtitle">Q2C is one bridge inside the wider ConcordiaPax ecosystem.</p>
     </div>
-    <div class="roadmap">
+    <div class="roadmap" id="roadmap-grid">
       <div class="rm-card rv">
         <div class="rm-num">Phase 01</div>
         <h3>Editorial Lab</h3>
@@ -878,13 +878,13 @@
   <div class="wrap" style="position:relative; text-align:center;">
     <div class="cta-glow"></div>
     <div class="rv">
-      <span class="eyebrow">Start Here</span>
-      <h2>Start with the <span>useful stuff</span>.</h2>
+      <span class="eyebrow" id="final-cta-eyebrow">Start Here</span>
+      <h2 id="final-cta-title">Start with the <span>useful stuff</span>.</h2>
       <div class="divider c"></div>
-      <p>Follow the field notes, keep the caveats, and use what helps. Leave the theater behind.</p>
+      <p id="final-cta-description">Follow the field notes, keep the caveats, and use what helps. Leave the theater behind.</p>
       <div class="cta-row">
-        <a href="#story" class="btn btn-fill">Read the Origin</a>
-        <a href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-outline">Subscribe for Updates</a>
+        <a id="final-cta-primary" href="#story" class="btn btn-fill">Read the Origin</a>
+        <a id="final-cta-secondary" href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-outline">Subscribe for Updates</a>
       </div>
     </div>
   </div>
@@ -896,12 +896,12 @@
 <section id="legal">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow">Important Disclosures</span>
-      <h2>Legal &amp; Disclaimers</h2>
+      <span class="eyebrow" id="legal-eyebrow">Important Disclosures</span>
+      <h2 id="legal-title">Legal &amp; Disclaimers</h2>
       <div class="divider c"></div>
     </div>
 
-    <div class="legal-grid">
+    <div class="legal-grid" id="legal-summary-grid">
       <div class="l-block rv">
         <h3>Not Financial Advice</h3>
         <p>All content published on Quarters2Crypto — including articles, reviews, newsletters, videos, and social media posts — is for <strong style="color:var(--text)">informational and entertainment purposes only</strong>. Nothing on this site constitutes financial advice, investment advice, trading advice, or any other form of professional financial guidance of any kind.</p>
@@ -920,6 +920,7 @@
       </div>
     </div>
 
+    <div id="legal-detail-blocks">
     <div class="l-full rv">
       <h3>Technology &amp; AI Content</h3>
       <p>
@@ -948,10 +949,11 @@
         Some content on this site may involve affiliate relationships, referral codes, or sponsored placements. When this is the case, it will be <strong style="color:var(--text)">clearly and prominently disclosed</strong> within the relevant content prior to or at the point of any recommendation. Affiliate relationships do not influence our editorial decisions, assessments, or ratings. We only feature platforms and products we have personally evaluated. Compensation received, if any, does not constitute an endorsement of quality, safety, or suitability for any particular user.
       </p>
     </div>
+    </div>
 
     <div class="legal-stamp">
-      <p>© 2026 Quarters2Crypto &nbsp;·&nbsp; quarters2crypto.com &nbsp;·&nbsp; All rights reserved.</p>
-      <p>Practical field notes only. Not financial advice. Not legal advice. Not tax advice. Verify what matters and keep your own judgment switched on.</p>
+      <p id="legal-stamp-line-1">© 2026 Quarters2Crypto &nbsp;·&nbsp; quarters2crypto.com &nbsp;·&nbsp; All rights reserved.</p>
+      <p id="legal-stamp-line-2">Practical field notes only. Not financial advice. Not legal advice. Not tax advice. Verify what matters and keep your own judgment switched on.</p>
     </div>
   </div>
 </section>
@@ -963,8 +965,8 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="Quarters2Crypto/Q2C%20Pics/quarter2crypto_logo.png" alt="Quarters2Crypto">
-        <p>Practical field notes for the digital economy. Built in public by Flaveon. Useful over flashy.</p>
+        <img id="footer-logo" src="/media/images/q2c-logo.png" alt="Quarters2Crypto">
+        <p id="footer-brand-blurb">Practical field notes for the digital economy. Built in public by Flaveon. Useful over flashy.</p>
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
@@ -979,7 +981,7 @@
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
-        <ul>
+        <ul id="footer-connect-links">
           <li><a href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener">Newsletter</a></li>
           <li><a href="https://www.youtube.com/channel/UC3O_UpBRqOg7PBhRPRUqhTw" target="_blank" rel="noopener">YouTube</a></li>
           <li><a href="https://x.com/flaveon316" target="_blank" rel="noopener">Twitter / X</a></li>
@@ -988,8 +990,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Quarters2Crypto &nbsp;·&nbsp; Not financial advice.</span>
-      <span class="footer-tag">Bridging crypto and real life.</span>
+      <span id="footer-bottom-left">© 2026 Quarters2Crypto &nbsp;·&nbsp; Not financial advice.</span>
+      <span class="footer-tag" id="footer-bottom-right">Bridging crypto and real life.</span>
     </div>
   </div>
 </footer>
@@ -998,13 +1000,234 @@
      SCRIPTS
 ════════════════════════════════════════════════ -->
 <script>
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el && typeof value === 'string') {
+    el.textContent = value;
+  }
+}
+
+function setHTML(id, value) {
+  const el = document.getElementById(id);
+  if (el && typeof value === 'string') {
+    el.innerHTML = value;
+  }
+}
+
+function setHref(id, value) {
+  const el = document.getElementById(id);
+  if (el && typeof value === 'string' && value) {
+    el.setAttribute('href', value);
+  }
+}
+
+function setImageSrc(id, value) {
+  const el = document.getElementById(id);
+  if (el && typeof value === 'string' && value) {
+    el.setAttribute('src', value);
+  }
+}
+
+function renderParagraphs(paragraphs) {
+  return (paragraphs || []).map((text) => `<p>${escapeHtml(text)}</p>`).join('');
+}
+
+function renderLines(lines) {
+  return (lines || []).map((line) => escapeHtml(line)).join('<br>');
+}
+
+function renderSiteContent(data) {
+  if (!data) return;
+
+  if (data.meta) {
+    if (data.meta.title) {
+      document.title = data.meta.title;
+    }
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription && data.meta.description) {
+      metaDescription.setAttribute('content', data.meta.description);
+    }
+  }
+
+  if (data.branding) {
+    const heroBg = document.getElementById('hero-bg');
+    if (heroBg && data.branding.hero_image) {
+      heroBg.style.backgroundImage = `url("${data.branding.hero_image}")`;
+    }
+    ['nav-brand-icon', 'hero-icon', 'story-icon'].forEach((id) => setImageSrc(id, data.branding.icon_image));
+    setImageSrc('footer-logo', data.branding.logo_image);
+  }
+
+  if (data.hero) {
+    setText('hero-alias', data.hero.alias);
+    setHTML('hero-headline', renderLines(data.hero.headline_lines));
+    setText('hero-summary', data.hero.summary);
+    setText('hero-primary-cta', data.hero.primary_label);
+    setHref('hero-primary-cta', data.hero.primary_href);
+    setText('hero-secondary-cta', data.hero.secondary_label);
+    setHref('hero-secondary-cta', data.hero.secondary_href);
+    setHref('nav-subscribe-link', data.hero.secondary_href);
+  }
+
+  if (data.story) {
+    setText('story-eyebrow', data.story.eyebrow);
+    setHTML('story-title', renderLines(data.story.title_lines));
+    setHTML('story-paragraphs', renderParagraphs(data.story.paragraphs));
+    setText('story-quote', data.story.quote);
+    setText('story-tag', data.story.tag);
+  }
+
+  if (data.topics) {
+    setText('topics-eyebrow', data.topics.eyebrow);
+    setText('topics-title', data.topics.title);
+    setText('topics-subtitle', data.topics.subtitle);
+    setText('topics-note', data.topics.note);
+    const topicsGrid = document.getElementById('topics-grid');
+    if (topicsGrid && Array.isArray(data.topics.items)) {
+      topicsGrid.innerHTML = data.topics.items.map((item) => `
+        <div class="f-card rv">
+          <span class="f-icon">${escapeHtml(item.icon)}</span>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.description)}</p>
+          <span class="badge ${item.badge_tone === 'newsletter' ? 'b-sub' : 'b-free'}">${escapeHtml(item.badge)}</span>
+        </div>
+      `).join('');
+    }
+  }
+
+  if (data.model) {
+    setText('model-eyebrow', data.model.eyebrow);
+    setText('model-title', data.model.title);
+    const tiers = document.getElementById('model-tiers');
+    if (tiers && Array.isArray(data.model.tiers)) {
+      tiers.innerHTML = data.model.tiers.map((tier) => `
+        <div class="tier ${tier.tone === 'newsletter' ? 't-sub' : 't-free'} rv">
+          <span class="tier-label">${escapeHtml(tier.label)}</span>
+          <h3>${escapeHtml(tier.title)}</h3>
+          <p class="tier-desc">${escapeHtml(tier.description)}</p>
+          <ul class="tier-list">
+            ${(tier.items || []).map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
+          </ul>
+          ${tier.note ? `<p class="tier-note">${escapeHtml(tier.note)}</p>` : ''}
+        </div>
+      `).join('');
+    }
+  }
+
+  if (data.signal_pick) {
+    setText('signal-title', data.signal_pick.title);
+    setText('signal-description', data.signal_pick.description);
+    setText('signal-ai-label', `⚙ ${data.signal_pick.ai_notice_label}`);
+    setText('signal-ai-body', data.signal_pick.ai_notice_body);
+    setText('signal-record-title', data.signal_pick.record_title);
+    setText('signal-tracker-note', data.signal_pick.tracker_note);
+    setText('signal-cta', data.signal_pick.cta_label);
+    setHref('signal-cta', data.signal_pick.cta_href);
+    setText('signal-disclaimer', data.signal_pick.disclaimer);
+    const badges = document.getElementById('signal-badges');
+    if (badges && Array.isArray(data.signal_pick.badges)) {
+      badges.innerHTML = data.signal_pick.badges.map((badge) => `
+        <span class="pick-badge ${badge.tone === 'newsletter' ? 'pb-paid' : 'pb-free'}">${escapeHtml(badge.label)}</span>
+      `).join('');
+    }
+  }
+
+  if (data.roadmap) {
+    setText('roadmap-eyebrow', data.roadmap.eyebrow);
+    setText('roadmap-title', data.roadmap.title);
+    setText('roadmap-subtitle', data.roadmap.subtitle);
+    const roadmap = document.getElementById('roadmap-grid');
+    if (roadmap && Array.isArray(data.roadmap.items)) {
+      roadmap.innerHTML = data.roadmap.items.map((item) => `
+        <div class="rm-card rv">
+          <div class="rm-num">${escapeHtml(item.phase)}</div>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.description)}</p>
+          <span class="rm-status">${escapeHtml(item.status)}</span>
+        </div>
+      `).join('');
+    }
+  }
+
+  if (data.cta_final) {
+    setText('final-cta-eyebrow', data.cta_final.eyebrow);
+    setHTML('final-cta-title', `${escapeHtml(data.cta_final.title_prefix)} <span>${escapeHtml(data.cta_final.title_highlight)}</span>${escapeHtml(data.cta_final.title_suffix)}`);
+    setText('final-cta-description', data.cta_final.description);
+    setText('final-cta-primary', data.cta_final.primary_label);
+    setHref('final-cta-primary', data.cta_final.primary_href);
+    setText('final-cta-secondary', data.cta_final.secondary_label);
+    setHref('final-cta-secondary', data.cta_final.secondary_href);
+  }
+
+  if (data.legal) {
+    setText('legal-eyebrow', data.legal.eyebrow);
+    setText('legal-title', data.legal.title);
+    const summaryGrid = document.getElementById('legal-summary-grid');
+    if (summaryGrid && Array.isArray(data.legal.summary_blocks)) {
+      summaryGrid.innerHTML = data.legal.summary_blocks.map((block) => `
+        <div class="l-block rv">
+          <h3>${escapeHtml(block.title)}</h3>
+          <p>${escapeHtml(block.body)}</p>
+        </div>
+      `).join('');
+    }
+    const detailBlocks = document.getElementById('legal-detail-blocks');
+    if (detailBlocks && Array.isArray(data.legal.detail_blocks)) {
+      detailBlocks.innerHTML = data.legal.detail_blocks.map((block) => `
+        <div class="l-full rv">
+          <h3>${escapeHtml(block.title)}</h3>
+          <p>${(block.paragraphs || []).map((paragraph) => `${escapeHtml(paragraph)}`).join('<br><br>')}</p>
+        </div>
+      `).join('');
+    }
+    if (Array.isArray(data.legal.stamp_lines)) {
+      setText('legal-stamp-line-1', data.legal.stamp_lines[0] || '');
+      setText('legal-stamp-line-2', data.legal.stamp_lines[1] || '');
+    }
+  }
+
+  if (data.footer) {
+    setText('footer-brand-blurb', data.footer.brand_blurb);
+    setText('footer-bottom-left', data.footer.bottom_left);
+    setText('footer-bottom-right', data.footer.bottom_right);
+    const links = document.getElementById('footer-connect-links');
+    if (links && Array.isArray(data.footer.connect_links)) {
+      links.innerHTML = data.footer.connect_links.map((link) => `
+        <li><a href="${escapeHtml(link.url)}" target="_blank" rel="noopener">${escapeHtml(link.label)}</a></li>
+      `).join('');
+    }
+  }
+}
+
+async function loadSiteContent() {
+  try {
+    const response = await fetch('content/site.json', { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error(`Failed to load content/site.json: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.warn('Q2C content loader fell back to static HTML.', error);
+    return null;
+  }
+}
+
 /* ── STARFIELD ───────────────────────────────────── */
-(function () {
+function initStarfield() {
   const canvas = document.getElementById('starfield');
   const ctx    = canvas.getContext('2d');
   let   stars  = [];
   const N      = 190;
-  const COLORS = ['#fffdf8','#7e73a9','#b68558','#7fd1c4','#f5a623'];
+  const COLORS = ['#fffdf8', '#7e73a9', '#b68558', '#7fd1c4', '#f5a623'];
 
   function resize() {
     canvas.width  = window.innerWidth;
@@ -1034,63 +1257,86 @@
       ctx.globalAlpha = a;
       ctx.fill();
       s.y -= s.sp * 0.09;
-      if (s.y < -2) { s.y = canvas.height + 2; s.x = Math.random() * canvas.width; }
+      if (s.y < -2) {
+        s.y = canvas.height + 2;
+        s.x = Math.random() * canvas.width;
+      }
     }
     ctx.globalAlpha = 1;
     requestAnimationFrame(frame);
   }
 
-  window.addEventListener('resize', () => { resize(); seed(); }, { passive: true });
-  resize(); seed(); requestAnimationFrame(frame);
-})();
+  window.addEventListener('resize', () => {
+    resize();
+    seed();
+  }, { passive: true });
+
+  resize();
+  seed();
+  requestAnimationFrame(frame);
+}
 
 /* ── NAV SCROLL ──────────────────────────────────── */
-(function () {
+function initNavScroll() {
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 50);
   }, { passive: true });
-})();
+}
 
 /* ── HAMBURGER ───────────────────────────────────── */
-(function () {
-  const btn   = document.getElementById('hamburger');
+function initHamburger() {
+  const btn = document.getElementById('hamburger');
   const links = document.getElementById('nav-links');
   const toggle = () => links.classList.toggle('open');
   btn.addEventListener('click', toggle);
-  btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') toggle(); });
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
-})();
+  btn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') toggle();
+  });
+  links.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => links.classList.remove('open')));
+}
 
 /* ── ACTIVE NAV LINK ─────────────────────────────── */
-(function () {
+function initActiveNavLink() {
   const sections = [...document.querySelectorAll('section[id]')];
-  const links    = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+  const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
   window.addEventListener('scroll', () => {
     let cur = '';
-    for (const s of sections) {
-      if (window.scrollY >= s.offsetTop - 90) cur = s.id;
+    for (const section of sections) {
+      if (window.scrollY >= section.offsetTop - 90) cur = section.id;
     }
-    links.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+    links.forEach((a) => {
+      a.classList.toggle('active', a.getAttribute('href') === `#${cur}`);
     });
   }, { passive: true });
-})();
+}
 
 /* ── SCROLL REVEAL ───────────────────────────────── */
-(function () {
+function initReveal() {
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      const parent   = entry.target.parentElement;
+      const parent = entry.target.parentElement;
       const siblings = [...parent.querySelectorAll('.rv:not(.in)')];
-      const idx      = siblings.indexOf(entry.target);
+      const idx = siblings.indexOf(entry.target);
       setTimeout(() => entry.target.classList.add('in'), Math.min(idx * 85, 380));
       io.unobserve(entry.target);
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
 
-  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+  document.querySelectorAll('.rv').forEach((el) => io.observe(el));
+}
+
+(async function bootstrapPage() {
+  const siteContent = await loadSiteContent();
+  if (siteContent) {
+    renderSiteContent(siteContent);
+  }
+  initStarfield();
+  initNavScroll();
+  initHamburger();
+  initActiveNavLink();
+  initReveal();
 })();
 </script>
 

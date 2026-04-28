@@ -1,0 +1,331 @@
+media:
+  - name: site_images
+    label: Site images
+    input: media/images
+    output: /media/images
+    rename: true
+    categories: [image]
+    commit:
+      identity: user
+  - name: site_files
+    label: Site files
+    input: media/files
+    output: /media/files
+    rename: true
+    categories: [document, compressed, code, spreadsheet, font]
+    commit:
+      identity: user
+
+settings:
+  content: true
+  commit:
+    identity: user
+    templates:
+      create: "content(create): {path}"
+      update: "content(update): {path}"
+      delete: "content(delete): {path}"
+      rename: "content(rename): {oldPath} -> {newPath}"
+
+content:
+  - name: homepage
+    label: Homepage content
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: meta
+        label: Meta
+        type: object
+        fields:
+          - name: title
+            label: Browser title
+            type: string
+          - name: description
+            label: Meta description
+            type: text
+      - name: branding
+        label: Branding images
+        type: object
+        fields:
+          - name: hero_image
+            label: Hero background image
+            type: image
+            options:
+              media: site_images
+              path: ""
+          - name: icon_image
+            label: Brand icon
+            type: image
+            options:
+              media: site_images
+              path: ""
+          - name: logo_image
+            label: Brand logo
+            type: image
+            options:
+              media: site_images
+              path: ""
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: alias
+            type: string
+          - name: headline_lines
+            label: Headline lines
+            type: string
+            list: true
+          - name: summary
+            type: text
+          - name: primary_label
+            label: Primary CTA label
+            type: string
+          - name: primary_href
+            label: Primary CTA link
+            type: string
+          - name: secondary_label
+            label: Secondary CTA label
+            type: string
+          - name: secondary_href
+            label: Secondary CTA link
+            type: string
+      - name: story
+        label: Story
+        type: object
+        fields:
+          - name: eyebrow
+            type: string
+          - name: title_lines
+            label: Title lines
+            type: string
+            list: true
+          - name: paragraphs
+            label: Story paragraphs
+            type: text
+            list: true
+          - name: quote
+            type: text
+          - name: tag
+            type: string
+      - name: topics
+        label: Topics section
+        type: object
+        fields:
+          - name: eyebrow
+            type: string
+          - name: title
+            type: string
+          - name: subtitle
+            type: text
+          - name: note
+            type: string
+          - name: items
+            label: Topic cards
+            type: object
+            list: true
+            fields:
+              - name: icon
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+              - name: badge
+                type: string
+              - name: badge_tone
+                label: Badge tone
+                type: select
+                options:
+                  values:
+                    - value: free
+                      label: Free
+                    - value: newsletter
+                      label: Newsletter
+      - name: model
+        label: Access model
+        type: object
+        fields:
+          - name: eyebrow
+            type: string
+          - name: title
+            type: string
+          - name: tiers
+            label: Access tiers
+            type: object
+            list: true
+            fields:
+              - name: label
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+              - name: items
+                label: Bullet items
+                type: string
+                list: true
+              - name: note
+                type: text
+              - name: tone
+                type: select
+                options:
+                  values:
+                    - value: free
+                      label: Free
+                    - value: newsletter
+                      label: Newsletter
+      - name: signal_pick
+        label: Signal Pick
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: description
+            type: text
+          - name: ai_notice_label
+            type: string
+          - name: ai_notice_body
+            type: text
+          - name: record_title
+            type: string
+          - name: tracker_note
+            type: text
+          - name: badges
+            type: object
+            list: true
+            fields:
+              - name: label
+                type: string
+              - name: tone
+                type: select
+                options:
+                  values:
+                    - value: free
+                      label: Free
+                    - value: newsletter
+                      label: Newsletter
+          - name: cta_label
+            type: string
+          - name: cta_href
+            type: string
+          - name: disclaimer
+            type: text
+      - name: roadmap
+        label: Roadmap
+        type: object
+        fields:
+          - name: eyebrow
+            type: string
+          - name: title
+            type: string
+          - name: subtitle
+            type: text
+          - name: items
+            label: Roadmap cards
+            type: object
+            list: true
+            fields:
+              - name: phase
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+              - name: status
+                type: string
+      - name: cta_final
+        label: Final CTA
+        type: object
+        fields:
+          - name: eyebrow
+            type: string
+          - name: title_prefix
+            type: string
+          - name: title_highlight
+            type: string
+          - name: title_suffix
+            type: string
+          - name: description
+            type: text
+          - name: primary_label
+            type: string
+          - name: primary_href
+            type: string
+          - name: secondary_label
+            type: string
+          - name: secondary_href
+            type: string
+      - name: legal
+        label: Legal
+        type: object
+        fields:
+          - name: eyebrow
+            type: string
+          - name: title
+            type: string
+          - name: summary_blocks
+            label: Summary cards
+            type: object
+            list: true
+            fields:
+              - name: title
+                type: string
+              - name: body
+                type: text
+          - name: detail_blocks
+            label: Full legal blocks
+            type: object
+            list: true
+            fields:
+              - name: title
+                type: string
+              - name: paragraphs
+                type: text
+                list: true
+          - name: stamp_lines
+            label: Footer legal lines
+            type: text
+            list: true
+      - name: footer
+        label: Footer
+        type: object
+        fields:
+          - name: brand_blurb
+            type: text
+          - name: connect_links
+            label: Connect links
+            type: object
+            list: true
+            fields:
+              - name: label
+                type: string
+              - name: url
+                type: string
+          - name: bottom_left
+            type: string
+          - name: bottom_right
+            type: string
+
+  - name: emergency_html
+    label: Emergency HTML editor
+    type: file
+    path: index.html
+    format: code
+
+  - name: brand_tokens
+    label: Brand tokens
+    type: file
+    path: brand-kit/cpax-q2c-design-tokens.json
+    format: code
+
+  - name: brand_theme_css
+    label: Brand theme CSS
+    type: file
+    path: brand-kit/cpax-q2c-theme.css
+    format: code
+
+  - name: brand_style_brief
+    label: Brand style brief
+    type: file
+    path: brand-kit/cpax-q2c-style-brief.txt
+    format: raw
