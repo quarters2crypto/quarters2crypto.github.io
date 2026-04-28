@@ -1,0 +1,39 @@
+ConcordiaPax / Quarters2Crypto Style Brief
+
+Use this when prompting site builders, app generators, or AI design tools.
+
+Visual direction:
+- Dark editorial atmosphere, not neon cyberpunk
+- Keep layouts spacious, readable, and intentional
+- Use warm golden glows, bronze warmth, muted smoky violet depth, and a small amount of teal for technical signal
+- Avoid hot pink banners, candy gradients, or loud meme-crypto aesthetics
+
+Typography:
+- Headings: Space Grotesk
+- Body: Source Serif 4
+- Labels / metadata / technical notes: IBM Plex Mono
+
+Tone:
+- Practical
+- Clear
+- Grounded
+- Curious
+- Trust-first
+- Human-centered
+
+Brand message:
+- Bridging crypto and real life
+- Useful technology over flashy promises
+- Explain advanced systems in a way ordinary people can actually use
+- Reduce friction without hiding risk
+- Avoid hype, fear tactics, and fake certainty
+
+Layout cues:
+- Strong hero with atmospheric background image
+- Editorial content blocks and readable copy width
+- Clean card grids with restrained borders
+- Primary CTA in warm gold
+- Secondary CTA in subtle gold outline
+
+Prompt snippet:
+Create a dark editorial interface using Space Grotesk for headings, Source Serif 4 for body copy, and IBM Plex Mono for labels. Use deep slate-black backgrounds with warm gold highlights, bronze accents, muted smoky violet depth, and small teal technical accents. Preserve atmosphere and contrast, but avoid hot pink banners, loud crypto clichés, and neon overload. The tone should feel practical, intelligent, and grounded in real-world usefulness.

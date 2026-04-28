@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --cpax-bg-0: #081015;
+  --cpax-bg-1: #131b24;
+  --cpax-bg-2: #1d2934;
+
+  --cpax-text: #ebebea;
+  --cpax-muted: #b6b0a7;
+  --cpax-white: #fffdf8;
+  --cpax-ink: #1a1a1a;
+
+  --cpax-gold: #f5a623;
+  --cpax-gold-deep: #cf8613;
+  --cpax-bronze: #b68558;
+  --cpax-violet-smoke: #7e73a9;
+  --cpax-indigo-fog: #89a7c7;
+  --cpax-teal-signal: #7fd1c4;
+
+  --cpax-card: rgba(24, 31, 40, 0.68);
+  --cpax-border: rgba(166, 142, 102, 0.20);
+
+  --cpax-grad-hero: linear-gradient(135deg, #ffffff 0%, #f5a623 28%, #fffdf8 58%, #7e73a9 100%);
+  --cpax-grad-cta: linear-gradient(135deg, #f5a623, #cf8613);
+  --cpax-grad-rule: linear-gradient(90deg, #f5a623, #7e73a9);
+  --cpax-grad-wordmark: linear-gradient(90deg, #f5a623, #fffdf8);
+
+  --cpax-glow-gold: 0 0 24px rgba(245, 166, 35, 0.28);
+  --cpax-glow-violet: 0 0 22px rgba(126, 115, 169, 0.22);
+  --cpax-glow-bronze: 0 0 22px rgba(182, 133, 88, 0.18);
+
+  --cpax-font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --cpax-font-body: 'Source Serif 4', Georgia, serif;
+  --cpax-font-mono: 'IBM Plex Mono', monospace;
+
+  --cpax-radius-card: 16px;
+  --cpax-radius-pill: 999px;
+}
+
+body.cpax-q2c-theme {
+  background: var(--cpax-bg-0);
+  color: var(--cpax-text);
+  font-family: var(--cpax-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.cpax-q2c-theme h1,
+.cpax-q2c-theme h2,
+.cpax-q2c-theme h3,
+.cpax-q2c-theme h4,
+.cpax-q2c-theme .display,
+.cpax-q2c-theme .headline {
+  font-family: var(--cpax-font-heading);
+  letter-spacing: -0.025em;
+}
+
+.cpax-q2c-theme .eyebrow,
+.cpax-q2c-theme .meta,
+.cpax-q2c-theme .label,
+.cpax-q2c-theme .microcopy {
+  font-family: var(--cpax-font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cpax-q2c-theme .muted {
+  color: var(--cpax-muted);
+}
+
+.cpax-q2c-theme .card {
+  background: var(--cpax-card);
+  border: 1px solid var(--cpax-border);
+  border-radius: var(--cpax-radius-card);
+  backdrop-filter: blur(12px);
+}
+
+.cpax-q2c-theme .wordmark,
+.cpax-q2c-theme .hero-gradient {
+  background: var(--cpax-grad-wordmark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cpax-q2c-theme .hero-gradient {
+  background: var(--cpax-grad-hero);
+}
+
+.cpax-q2c-theme .rule {
+  background: var(--cpax-grad-rule);
+  height: 2px;
+  border: 0;
+}
+
+.cpax-q2c-theme .btn-primary {
+  background: var(--cpax-grad-cta);
+  color: var(--cpax-ink);
+  box-shadow: var(--cpax-glow-gold);
+  border-radius: var(--cpax-radius-pill);
+}
+
+.cpax-q2c-theme .btn-secondary {
+  background: rgba(245, 166, 35, 0.08);
+  color: var(--cpax-gold);
+  border: 1px solid rgba(245, 166, 35, 0.32);
+  border-radius: var(--cpax-radius-pill);
+}
+
+.cpax-q2c-theme a {
+  color: var(--cpax-violet-smoke);
+}
+
+.cpax-q2c-theme a:hover {
+  color: var(--cpax-gold);
+}

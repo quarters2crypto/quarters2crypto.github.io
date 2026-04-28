@@ -1,0 +1,96 @@
+{
+  "name": "ConcordiaPax / Quarters2Crypto Design Tokens",
+  "version": "1.0.0",
+  "description": "Shared brand tokens for injecting ConcordiaPax and Q2C tone into websites, apps, and AI-assisted design tools.",
+  "brand": {
+    "parent": "Concordia Pax LLC",
+    "publication": "Quarters2Crypto",
+    "guiding_phrase": "Bridging Worlds"
+  },
+  "fonts": {
+    "heading": {
+      "family": "Space Grotesk",
+      "fallback": "system-ui, sans-serif",
+      "weights": [500, 700, 800],
+      "usage": "Headlines, section titles, CTA labels, strong interface moments"
+    },
+    "body": {
+      "family": "Source Serif 4",
+      "fallback": "Georgia, serif",
+      "weights": [400, 600],
+      "usage": "Editorial body copy, long-form sections, explanatory content"
+    },
+    "mono": {
+      "family": "IBM Plex Mono",
+      "fallback": "monospace",
+      "weights": [400, 500, 600],
+      "usage": "Eyebrows, metadata, labels, technical callouts, small UI text"
+    }
+  },
+  "colors": {
+    "background": {
+      "base": "#081015",
+      "surface": "#131b24",
+      "surface_alt": "#1d2934"
+    },
+    "text": {
+      "primary": "#ebebea",
+      "muted": "#b6b0a7",
+      "inverse": "#1a1a1a"
+    },
+    "accent": {
+      "gold": "#f5a623",
+      "gold_deep": "#cf8613",
+      "bronze": "#b68558",
+      "violet_smoke": "#7e73a9",
+      "teal_signal": "#7fd1c4",
+      "indigo_fog": "#89a7c7"
+    },
+    "utility": {
+      "success": "#4ade80",
+      "warning": "#f5a623",
+      "danger": "#f87171",
+      "border": "rgba(166,142,102,0.20)",
+      "card": "rgba(24,31,40,0.68)"
+    }
+  },
+  "gradients": {
+    "hero_text": "linear-gradient(135deg, #ffffff 0%, #f5a623 28%, #fffdf8 58%, #7e73a9 100%)",
+    "cta_fill": "linear-gradient(135deg, #f5a623, #cf8613)",
+    "rule": "linear-gradient(90deg, #f5a623, #7e73a9)",
+    "wordmark": "linear-gradient(90deg, #f5a623, #fffdf8)"
+  },
+  "effects": {
+    "glow_gold": "0 0 24px rgba(245,166,35,0.28)",
+    "glow_violet": "0 0 22px rgba(126,115,169,0.22)",
+    "glow_bronze": "0 0 22px rgba(182,133,88,0.18)",
+    "radius_card": "16px",
+    "radius_pill": "999px"
+  },
+  "tone": {
+    "traits": [
+      "practical",
+      "grounded",
+      "curious",
+      "clear",
+      "editorial",
+      "trust-first",
+      "human-centered"
+    ],
+    "avoid": [
+      "hot pink banners",
+      "neon overload",
+      "hype language",
+      "fear-based urgency",
+      "sterile corporate phrasing",
+      "reckless techno-utopianism"
+    ]
+  },
+  "layout_guidance": {
+    "hero": "Keep the current cinematic background image or use a photo/illustration with strong atmosphere. Overlay with dark slate gradients and restrained warm glows.",
+    "sections": "Prefer spacious editorial blocks, clean card grids, and narrow readable body copy over crowded dashboards.",
+    "buttons": "Use gold/bronze fills for primary CTA. Use transparent gold-outline treatments for secondary CTA.",
+    "highlights": "Use gold for emphasis, muted violet for depth, and teal sparingly for signal or technical accents."
+  },
+  "prompt_snippet": "Use a dark editorial layout with Space Grotesk headings, Source Serif 4 body text, and IBM Plex Mono labels. Keep the palette grounded: slate-black backgrounds, warm gold highlights, bronze accents, muted smoky violet depth, and small teal technical accents. Avoid neon pink banners or loud crypto clichés. The tone should feel practical, intelligent, and trust-first."
+}

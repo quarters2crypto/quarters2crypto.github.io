@@ -3,42 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quarters2Crypto — Turn Curiosity Into Coin</title>
-  <meta name="description" content="Real-world experiments in Web3 income — without hype, without guru nonsense. App reviews, DeFi breakdowns, airdrop tracking, and more by Flaveon.">
+  <title>Quarters2Crypto — Practical Crypto Field Notes</title>
+  <meta name="description" content="Practical crypto field notes for people navigating the digital economy. Wallet-tested tools, security habits, market context, AI-assisted workflows, and real-world experiments by Flaveon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-0:       #0a0118;
-      --bg-1:       #1a0b2e;
-      --bg-2:       #2d1b4e;
-      --pink:       #ff6ec7;
-      --violet:     #a855f7;
-      --indigo:     #6366f1;
-      --gold:       #fbbf24;
-      --gold-dim:   #f59e0b;
-      --blue:       #4da6ff;
-      --white:      #ffffff;
-      --text:       #e2d9f3;
-      --muted:      #9d8ec4;
-      --card:       rgba(45,27,78,0.5);
-      --border:     rgba(168,85,247,0.18);
+      --bg-0:       #081015;
+      --bg-1:       #131b24;
+      --bg-2:       #1d2934;
+      --pink:       #b68558;
+      --violet:     #7e73a9;
+      --indigo:     #89a7c7;
+      --gold:       #f5a623;
+      --gold-dim:   #cf8613;
+      --blue:       #7fd1c4;
+      --white:      #fffdf8;
+      --text:       #ebebea;
+      --muted:      #b6b0a7;
+      --card:       rgba(24,31,40,0.68);
+      --border:     rgba(166,142,102,0.20);
       --nav-h:      68px;
-      --glow-v:     0 0 22px rgba(168,85,247,0.4);
-      --glow-p:     0 0 22px rgba(255,110,199,0.4);
-      --glow-g:     0 0 22px rgba(251,191,36,0.35);
+      --glow-v:     0 0 22px rgba(126,115,169,0.22);
+      --glow-p:     0 0 22px rgba(182,133,88,0.18);
+      --glow-g:     0 0 24px rgba(245,166,35,0.28);
       --ease:       0.3s ease;
       --radius:     16px;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: 'Source Serif 4', Georgia, serif;
       background: var(--bg-0);
       color: var(--text);
       line-height: 1.75;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 16% 18%, rgba(245,166,35,0.10), transparent 24%),
+        radial-gradient(circle at 82% 18%, rgba(126,115,169,0.10), transparent 22%),
+        radial-gradient(circle at 72% 80%, rgba(182,133,88,0.10), transparent 24%);
+      pointer-events: none;
+      z-index: 0;
     }
     a { color: var(--violet); text-decoration: none; transition: color var(--ease); }
-    a:hover { color: var(--pink); }
+    a:hover { color: var(--gold); }
     img { max-width: 100%; display: block; }
 
     /* ── STARFIELD ─────────────────────────────────── */
@@ -56,7 +72,7 @@
       background: rgba(10,1,24,0.82);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(168,85,247,0.12);
+      border-bottom: 1px solid rgba(245,166,35,0.12);
       z-index: 999;
       transition: background var(--ease);
     }
@@ -67,32 +83,35 @@
     }
     .nav-brand img { height: 38px; width: auto; }
     .nav-brand-text {
-      font-size: 0.9rem; font-weight: 700;
-      letter-spacing: 0.04em;
-      background: linear-gradient(90deg, var(--pink), var(--violet));
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.86rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      background: linear-gradient(90deg, var(--gold), var(--white));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
-      display: none;
+      display: block;
     }
     .nav-links {
       list-style: none; display: flex;
       align-items: center; gap: 1.75rem;
     }
     .nav-links a {
-      font-size: 0.8rem; font-weight: 500;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem; font-weight: 500;
       letter-spacing: 0.08em; text-transform: uppercase;
       color: var(--muted); transition: color var(--ease);
     }
-    .nav-links a:hover, .nav-links a.active { color: var(--pink); }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
     .nav-sub {
       padding: 0.45rem 1.2rem;
-      background: linear-gradient(135deg, var(--violet), var(--pink));
-      border-radius: 999px; font-size: 0.8rem; font-weight: 700;
-      color: #fff !important; letter-spacing: 0.04em;
-      box-shadow: var(--glow-v);
+      background: linear-gradient(135deg, var(--gold), var(--pink));
+      border: 1px solid rgba(245,166,35,0.35);
+      border-radius: 999px; font-size: 0.76rem; font-weight: 700;
+      color: #1a1a1a !important; letter-spacing: 0.08em; text-transform: uppercase;
+      box-shadow: var(--glow-g);
       transition: box-shadow var(--ease), transform var(--ease);
     }
-    .nav-sub:hover { box-shadow: var(--glow-p); transform: translateY(-1px); color: #fff !important; }
+    .nav-sub:hover { box-shadow: var(--glow-p); transform: translateY(-1px); color: #1a1a1a !important; }
     .hamburger {
       display: none; flex-direction: column;
       gap: 5px; cursor: pointer; padding: 4px;
@@ -107,25 +126,31 @@
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
     section { position: relative; z-index: 1; }
     .eyebrow {
-      display: inline-block; font-size: 0.68rem; font-weight: 800;
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem; font-weight: 600;
       letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--pink); margin-bottom: 0.7rem;
+      color: var(--gold); margin-bottom: 0.7rem;
     }
     .divider {
       width: 52px; height: 2px; border-radius: 2px;
-      background: linear-gradient(90deg, var(--pink), var(--violet));
+      background: linear-gradient(90deg, var(--gold), var(--violet));
       margin: 1.25rem 0;
     }
     .divider.c { margin: 1.25rem auto; }
     h1 { font-size: clamp(2.4rem,6vw,4.4rem); line-height: 1.12; font-weight: 800; }
     h2 { font-size: clamp(1.7rem,4vw,2.4rem); line-height: 1.2; font-weight: 700; }
+    h1, h2, h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.025em;
+    }
     h3 { font-size: 1.1rem; font-weight: 700; }
     .grad-text {
-      background: linear-gradient(135deg, #fff 0%, var(--pink) 55%, var(--violet) 100%);
+      background: linear-gradient(135deg, #fff 0%, var(--gold) 28%, var(--white) 58%, var(--violet) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .pink { color: var(--pink); }
+    .pink { color: var(--gold-dim); }
     .gold { color: var(--gold); }
     .violet { color: var(--violet); }
 
@@ -149,9 +174,9 @@
       content: '';
       position: absolute; inset: 0;
       background: linear-gradient(to bottom,
-        rgba(10,1,24,0.15) 0%,
-        rgba(10,1,24,0.5) 50%,
-        rgba(10,1,24,1) 100%);
+        rgba(8,16,21,0.18) 0%,
+        rgba(8,16,21,0.58) 46%,
+        rgba(8,16,21,1) 100%);
     }
     .hero-inner {
       position: relative; z-index: 2;
@@ -161,14 +186,15 @@
       width: 84px; height: 84px;
       margin-bottom: 2rem;
       animation: levitate 7s ease-in-out infinite;
-      filter: drop-shadow(0 0 18px rgba(168,85,247,0.5));
+      filter: drop-shadow(0 0 18px rgba(245,166,35,0.28));
     }
     @keyframes levitate {
       0%,100% { transform: translateY(0) rotate(0deg); }
       50%      { transform: translateY(-11px) rotate(2deg); }
     }
     .hero-alias {
-      font-size: 0.75rem; font-weight: 700;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem; font-weight: 600;
       letter-spacing: 0.22em; text-transform: uppercase;
       color: var(--gold); margin-bottom: 0.9rem;
     }
@@ -180,21 +206,23 @@
     .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn {
       display: inline-block; padding: 0.8rem 1.9rem;
-      border-radius: 999px; font-weight: 700;
+      border-radius: 999px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
       font-size: 0.9rem; transition: all var(--ease);
     }
     .btn-fill {
-      background: linear-gradient(135deg, var(--violet), var(--pink));
-      color: #fff; box-shadow: var(--glow-v);
+      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+      color: #151515; box-shadow: var(--glow-g);
     }
-    .btn-fill:hover { color: #fff; box-shadow: var(--glow-p); transform: translateY(-2px); }
+    .btn-fill:hover { color: #151515; box-shadow: var(--glow-p); transform: translateY(-2px); }
     .btn-outline {
-      border: 1px solid rgba(168,85,247,0.45);
-      color: var(--violet);
-      background: rgba(168,85,247,0.07);
+      border: 1px solid rgba(245,166,35,0.32);
+      color: var(--gold);
+      background: rgba(245,166,35,0.08);
       backdrop-filter: blur(8px);
     }
-    .btn-outline:hover { color: var(--pink); border-color: rgba(255,110,199,0.5); background: rgba(255,110,199,0.07); }
+    .btn-outline:hover { color: var(--white); border-color: rgba(245,166,35,0.46); background: rgba(245,166,35,0.13); }
 
     /* ── STORY ─────────────────────────────────────── */
     #story { padding: 8rem 0 6rem; }
@@ -206,17 +234,17 @@
     .story-orb {
       width: 270px; height: 270px; border-radius: 50%;
       background: radial-gradient(circle at 38% 32%, var(--bg-2), var(--bg-0));
-      border: 1px solid rgba(168,85,247,0.28);
+      border: 1px solid rgba(245,166,35,0.20);
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 70px rgba(168,85,247,0.15),
-                  0 0 140px rgba(255,110,199,0.06),
-                  inset 0 0 50px rgba(10,1,24,0.6);
+      box-shadow: 0 0 70px rgba(126,115,169,0.12),
+                  0 0 140px rgba(245,166,35,0.08),
+                  inset 0 0 50px rgba(8,16,21,0.6);
       position: relative;
     }
     .story-orb::after {
       content: ''; position: absolute; inset: -3px;
       border-radius: 50%;
-      background: conic-gradient(var(--pink), var(--violet), var(--indigo), var(--pink));
+      background: conic-gradient(var(--gold-dim), var(--violet), var(--indigo), var(--gold));
       z-index: -1; opacity: 0.35; filter: blur(6px);
       animation: spin 12s linear infinite;
     }
@@ -246,7 +274,7 @@
     /* ── WHAT'S HERE ───────────────────────────────── */
     #what-here {
       padding: 6rem 0;
-      background: linear-gradient(180deg, transparent, rgba(45,27,78,0.22), transparent);
+      background: linear-gradient(180deg, transparent, rgba(245,166,35,0.05), transparent);
     }
     .sec-head { text-align: center; margin-bottom: 3.5rem; }
     .sec-head h2 { margin-bottom: 0.3rem; }
@@ -270,7 +298,7 @@
       background: linear-gradient(90deg, transparent, var(--violet), transparent);
       opacity: 0; transition: opacity var(--ease);
     }
-    .f-card:hover { border-color: rgba(168,85,247,0.38); transform: translateY(-4px); box-shadow: 0 14px 42px rgba(10,1,24,0.5); }
+    .f-card:hover { border-color: rgba(245,166,35,0.28); transform: translateY(-4px); box-shadow: 0 14px 42px rgba(8,16,21,0.5); }
     .f-card:hover::after { opacity: 1; }
     .f-icon { font-size: 1.9rem; margin-bottom: 0.85rem; display: block; }
     .f-card h3 { color: var(--white); margin-bottom: 0.4rem; font-size: 1rem; }
@@ -298,10 +326,10 @@
       backdrop-filter: blur(12px);
       position: relative; overflow: hidden;
     }
-    .tier.t-free { background: rgba(45,27,78,0.42); }
+    .tier.t-free { background: rgba(29,41,52,0.48); }
     .tier.t-sub  {
-      background: linear-gradient(145deg, rgba(168,85,247,0.09), rgba(255,110,199,0.04));
-      border-color: rgba(255,110,199,0.28);
+      background: linear-gradient(145deg, rgba(245,166,35,0.08), rgba(126,115,169,0.08));
+      border-color: rgba(245,166,35,0.24);
     }
     .tier-label {
       display: inline-block; margin-bottom: 1.1rem;
@@ -310,7 +338,7 @@
       padding: 0.28rem 0.75rem; border-radius: 999px;
     }
     .t-free .tier-label { background: rgba(99,102,241,0.18); color: var(--indigo); border: 1px solid rgba(99,102,241,0.28); }
-    .t-sub  .tier-label { background: linear-gradient(135deg,var(--violet),var(--pink)); color: #fff; }
+    .t-sub  .tier-label { background: linear-gradient(135deg,var(--gold),var(--gold-dim)); color: #1a1a1a; }
     .tier h3 { font-size: 1.35rem; color: var(--white); margin-bottom: 0.4rem; }
     .tier-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.4rem; }
     .tier-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
@@ -322,7 +350,7 @@
       content: '◆'; font-size: 0.5rem;
       color: var(--violet); margin-top: 0.55em; flex-shrink: 0;
     }
-    .t-sub .tier-list li::before { color: var(--pink); }
+    .t-sub .tier-list li::before { color: var(--gold-dim); }
     .tier-note {
       margin-top: 1.5rem; font-size: 0.78rem;
       color: var(--muted); font-style: italic;
@@ -334,21 +362,21 @@
       max-width: 780px; margin: 0 auto;
       padding: 3rem 2.5rem;
       border-radius: 24px;
-      background: linear-gradient(145deg, rgba(45,27,78,0.65), rgba(10,1,24,0.85));
-      border: 1px solid rgba(255,110,199,0.22);
+      background: linear-gradient(145deg, rgba(29,41,52,0.72), rgba(8,16,21,0.88));
+      border: 1px solid rgba(245,166,35,0.18);
       text-align: center;
       backdrop-filter: blur(18px);
       position: relative; overflow: hidden;
     }
     .pick-wrap::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(255,110,199,0.07), transparent 65%);
+      background: radial-gradient(ellipse at 50% 0%, rgba(245,166,35,0.08), transparent 65%);
       pointer-events: none;
     }
     .pick-icon { font-size: 2.2rem; display: block; margin-bottom: 1rem; }
     .pick-wrap h2 { margin-bottom: 0.65rem; }
     .pick-wrap h2 span {
-      background: linear-gradient(90deg, var(--pink), var(--gold));
+      background: linear-gradient(90deg, var(--gold), var(--white));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
@@ -359,7 +387,7 @@
       font-size: 0.75rem; font-weight: 700;
     }
     .pb-free { background: rgba(99,102,241,0.14); border: 1px solid rgba(99,102,241,0.28); color: var(--indigo); }
-    .pb-paid { background: rgba(255,110,199,0.12); border: 1px solid rgba(255,110,199,0.32); color: var(--pink); }
+    .pb-paid { background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.28); color: var(--gold); }
     .pick-disclaimer {
       margin-top: 1.5rem; font-size: 0.75rem;
       color: rgba(157,142,196,0.55); font-style: italic;
@@ -373,12 +401,12 @@
     }
     .rm-card {
       padding: 1.4rem 1.5rem;
-      background: rgba(26,11,46,0.6);
+      background: rgba(19,27,36,0.72);
       border: 1px solid rgba(99,102,241,0.14);
       border-radius: 14px; backdrop-filter: blur(8px);
       transition: all var(--ease);
     }
-    .rm-card:hover { border-color: rgba(168,85,247,0.3); transform: translateY(-3px); }
+    .rm-card:hover { border-color: rgba(245,166,35,0.24); transform: translateY(-3px); }
     .rm-num {
       font-size: 0.65rem; font-weight: 800;
       letter-spacing: 0.16em; text-transform: uppercase;
@@ -403,12 +431,12 @@
     .cta-glow {
       position: absolute;
       width: 520px; height: 520px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(168,85,247,0.13), transparent 70%);
+      background: radial-gradient(circle, rgba(245,166,35,0.12), transparent 70%);
       top: 50%; left: 50%; transform: translate(-50%,-50%);
       pointer-events: none;
     }
     #cta-final h2 span {
-      background: linear-gradient(135deg, var(--pink), var(--gold));
+      background: linear-gradient(135deg, var(--gold), var(--white));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
@@ -419,7 +447,7 @@
     #legal {
       padding: 5rem 0 4rem;
       background: rgba(10,1,24,0.75);
-      border-top: 1px solid rgba(168,85,247,0.1);
+      border-top: 1px solid rgba(245,166,35,0.10);
     }
     #legal .sec-head h2 { color: var(--muted); font-size: 1.4rem; }
     .legal-grid {
@@ -429,7 +457,7 @@
     .l-block {
       padding: 1.6rem;
       background: rgba(26,11,46,0.5);
-      border: 1px solid rgba(168,85,247,0.1);
+      border: 1px solid rgba(245,166,35,0.10);
       border-radius: 12px;
     }
     .l-block h3 {
@@ -438,23 +466,23 @@
       color: var(--violet); margin-bottom: 0.65rem;
       display: flex; align-items: center; gap: 0.45rem;
     }
-    .l-block h3::before { content: '§'; color: var(--pink); font-style: italic; }
+    .l-block h3::before { content: '§'; color: var(--gold-dim); font-style: italic; }
     .l-block p { font-size: 0.83rem; color: var(--muted); line-height: 1.85; }
     .l-full {
       padding: 1.75rem 2rem; margin-bottom: 1.5rem;
       background: rgba(10,1,24,0.55);
-      border: 1px solid rgba(255,110,199,0.1);
+      border: 1px solid rgba(245,166,35,0.12);
       border-radius: 12px;
     }
     .l-full h3 {
       font-size: 0.7rem; font-weight: 800;
       letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--pink); margin-bottom: 0.85rem;
+      color: var(--gold-dim); margin-bottom: 0.85rem;
     }
     .l-full p { font-size: 0.8rem; color: var(--muted); line-height: 1.95; }
     .legal-stamp {
       text-align: center; padding-top: 2rem;
-      border-top: 1px solid rgba(168,85,247,0.08);
+      border-top: 1px solid rgba(245,166,35,0.08);
       font-size: 0.73rem;
       color: rgba(157,142,196,0.45);
       line-height: 1.8;
@@ -463,7 +491,7 @@
     /* ── FOOTER ────────────────────────────────────── */
     footer {
       padding: 3rem 0 2rem;
-      border-top: 1px solid rgba(168,85,247,0.1);
+      border-top: 1px solid rgba(245,166,35,0.10);
       position: relative; z-index: 1;
     }
     .footer-grid {
@@ -482,11 +510,11 @@
     }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
     .footer-col ul a { font-size: 0.87rem; color: var(--muted); transition: color var(--ease); }
-    .footer-col ul a:hover { color: var(--pink); }
+    .footer-col ul a:hover { color: var(--gold); }
     .footer-bottom {
       display: flex; justify-content: space-between; align-items: center;
       padding-top: 1.5rem;
-      border-top: 1px solid rgba(168,85,247,0.07);
+      border-top: 1px solid rgba(245,166,35,0.07);
       font-size: 0.76rem; color: rgba(157,142,196,0.45);
       flex-wrap: wrap; gap: 0.75rem;
     }
@@ -512,7 +540,7 @@
         background: rgba(10,1,24,0.98);
         backdrop-filter: blur(18px);
         padding: 2rem; gap: 1.5rem;
-        border-bottom: 1px solid rgba(168,85,247,0.14);
+        border-bottom: 1px solid rgba(245,166,35,0.14);
         z-index: 998;
       }
       .features    { grid-template-columns: 1fr; }
@@ -534,10 +562,10 @@
     <span class="nav-brand-text">Quarters2Crypto</span>
   </a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#story">My Story</a></li>
-    <li><a href="#what-here">What's Here</a></li>
-    <li><a href="#how-it-works">How It Works</a></li>
-    <li><a href="#coming">Coming</a></li>
+    <li><a href="#story">Why Q2C</a></li>
+    <li><a href="#what-here">Topics</a></li>
+    <li><a href="#how-it-works">Model</a></li>
+    <li><a href="#coming">Roadmap</a></li>
     <li><a href="#legal">Legal</a></li>
     <li><a href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="nav-sub">Subscribe</a></li>
   </ul>
@@ -553,16 +581,16 @@
   <div class="hero-bg"></div>
   <div class="wrap">
     <div class="hero-inner">
-      <p class="hero-alias">Quarters2Crypto · Field Notes from the Frontier</p>
+      <p class="hero-alias">Quarters2Crypto · Bridging Crypto and Real Life</p>
       <img src="Quarters2Crypto/Q2C%20Pics/quarter2crypto_icon_v2.png" alt="Q2C Emblem" class="hero-icon">
-      <h1 class="grad-text">Turn Curiosity<br>Into Coin.</h1>
+      <h1 class="grad-text">Make modern crypto<br>more useful.</h1>
       <p class="hero-sub">
-        Real-world experiments in Web3 income — without hype, without guru nonsense.
-        A regular person navigating crypto so you don't have to make every mistake alone.
+        Q2C translates wallets, digital assets, AI-assisted tools, and online earning experiments
+        into practical field notes for ordinary people. Less hype. More signal. More agency.
       </p>
       <div class="hero-ctas">
-        <a href="#story" class="btn btn-fill">Start Here</a>
-        <a href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-outline">Join the Newsletter</a>
+        <a href="#what-here" class="btn btn-fill">Explore the Topics</a>
+        <a href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-outline">Read on Substack</a>
       </div>
     </div>
   </div>
@@ -575,33 +603,34 @@
   <div class="wrap">
     <div class="story-grid">
       <div class="story-copy rv">
-        <span class="eyebrow">The Origin</span>
-        <h2>From <span class="pink">Pocket Change</span><br>to the Blockchain</h2>
+        <span class="eyebrow">Why This Exists</span>
+        <h2>From missed Bitcoin<br>to practical tech.</h2>
         <div class="divider"></div>
         <p>
-          I heard about Bitcoin in 2011. Tech nerd that I am — I thought it sounded cool,
-          then did exactly nothing about it. By 2014, some kid at work was practically begging
-          me to buy in. I handed him $100 and told him to figure it out. He couldn't.
-          Neither of us did.
+          I heard about Bitcoin early, understood just enough to know it mattered, and still
+          missed the moment. That turned into a long-running pattern: curiosity first, confusion
+          second, hard-earned lessons third.
         </p>
         <p>
-          Then 2017 hit. You know that feeling — <em>what am I doing with my life?</em>
-          I deep-dived into crypto. Convinced I'd missed Bitcoin, I chased games and
-          earn-to-play platforms instead. And then I discovered gas fees on Ethereum.
+          Over time, Q2C became less about chasing moonshots and more about translating the
+          digital economy into something regular people can actually use. Wallet apps, reward
+          systems, AI tooling, self-custody, online income experiments, and the messy space
+          where emerging tech touches everyday life.
         </p>
         <div class="pull-quote">
-          "The moment someone said 'Ethereum Killer' — I was all in like Flynn."
+          "If a tool only works for insiders, it is not finished yet."
         </div>
         <p>
-          Long story short: I landed on STEPN — a move-to-earn platform on Solana.
-          Made some decent SOL. Still do. Not retirement money, but proof the plays are
-          real when you find the right ones early.
+          ConcordiaPax is about bridging worlds. Q2C is one doorway into that mission: make
+          advanced systems more understandable, more honest, and more practical for the people
+          actually trying to build resilient lives.
         </p>
         <p>
-          <strong>That's what this is.</strong> I'm Flaveon. I try things. I waste time
-          on the wrong ones so you don't have to. Only I make the mistakes here.
+          <strong>I am not here to posture as a guru.</strong> I am here to test things,
+          document what is real, flag what is risky, and leave readers with more clarity than
+          they had before they arrived.
         </p>
-        <span class="story-tag">No finance degree. No guru status. Just field work.</span>
+        <span class="story-tag">Useful over flashy. Honest over loud. Human-first by default.</span>
       </div>
       <div class="story-orb-wrap rv">
         <div class="story-orb">
@@ -618,50 +647,50 @@
 <section id="what-here">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow">The Field</span>
-      <h2>What You'll Find <span class="pink">Here</span></h2>
+      <span class="eyebrow">Coverage Areas</span>
+      <h2>The topic stack.</h2>
       <div class="divider c"></div>
-      <p class="sec-sub">No basics. No hand-holding. We focus on what you're actually being exposed to.</p>
+      <p class="sec-sub">Coverage built around utility, literacy, and self-reliance in the digital economy.</p>
     </div>
     <div class="features">
       <div class="f-card rv">
         <span class="f-icon">🔬</span>
-        <h3>App Reviews</h3>
-        <p>Projects promoted by major wallets and blockchains — what's being pushed to real users right now, evaluated honestly.</p>
+        <h3>Wallet &amp; App Reviews</h3>
+        <p>What real users are being asked to trust right now, with attention to onboarding, fees, UX friction, and operational risk.</p>
         <span class="badge b-free">Free</span>
       </div>
       <div class="f-card rv">
         <span class="f-icon">📊</span>
-        <h3>DeFi & Yield Strategy</h3>
-        <p>Breakdowns of DeFi platforms, yield mechanics, and market strategies — with an honest read on real risk.</p>
+        <h3>Onchain Income Experiments</h3>
+        <p>Small-scale tests around rewards, incentives, and digital earning paths, with clear caveats about volatility and limits.</p>
         <span class="badge b-free">Free</span>
+      </div>
+      <div class="f-card rv">
+        <span class="f-icon">🤖</span>
+        <h3>AI + Crypto Tooling</h3>
+        <p>Workflows, assistants, OCR, automation, and research tools that make technical systems more usable for everyday builders.</p>
+        <span class="badge b-free">Free</span>
+      </div>
+      <div class="f-card rv">
+        <span class="f-icon">🛡️</span>
+        <h3>Security &amp; Self-Custody</h3>
+        <p>Wallet hygiene, authentication habits, scam patterns, and practical safeguards for people holding their own keys and accounts.</p>
+        <span class="badge b-sub">Newsletter</span>
       </div>
       <div class="f-card rv">
         <span class="f-icon">📰</span>
-        <h3>News & Market Editorial</h3>
-        <p>We editorialize crypto news and related TradFi developments. What it actually means — not just what happened.</p>
+        <h3>Market Context Without Theater</h3>
+        <p>What changed, why it matters, and how to think about it without influencer melodrama or fake certainty.</p>
         <span class="badge b-free">Free</span>
       </div>
       <div class="f-card rv">
-        <span class="f-icon">🪂</span>
-        <h3>Legitimate Airdrop Tracking</h3>
-        <p>Upcoming drops we've vetted — real opportunities, not scams. Early access for subscribers before they go wide.</p>
-        <span class="badge b-sub">Newsletter</span>
-      </div>
-      <div class="f-card rv">
-        <span class="f-icon">🎲</span>
-        <h3>Responsible Betting Analysis</h3>
-        <p>Crypto gambling exists in this space whether we like it or not. We analyze platforms and strategies with full risk framing.</p>
-        <span class="badge b-free">Free</span>
-      </div>
-      <div class="f-card rv">
-        <span class="f-icon">💎</span>
-        <h3>Deeper Cuts</h3>
-        <p>Little-known tools, projects, and opportunities that don't make the front page. Subscriber-only research and insights.</p>
+        <span class="f-icon">🌉</span>
+        <h3>Real-World Bridge Cases</h3>
+        <p>Where digital assets, online commerce, creators, communities, and practical technology start connecting in useful ways.</p>
         <span class="badge b-sub">Newsletter</span>
       </div>
     </div>
-    <p class="features-note">No hype. Just field notes.</p>
+    <p class="features-note">Useful over flashy. Signal over slogans.</p>
   </div>
 </section>
 
@@ -672,34 +701,34 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">The Model</span>
-      <h2>How This <span class="pink">Works</span></h2>
+      <h2>How Q2C works.</h2>
       <div class="divider c"></div>
     </div>
     <div class="tiers">
       <div class="tier t-free rv">
-        <span class="tier-label">Free</span>
-        <h3>Public Access</h3>
-        <p class="tier-desc">The foundation — always available, always honest.</p>
+        <span class="tier-label">Open Site</span>
+        <h3>Public Field Notes</h3>
+        <p class="tier-desc">The core layer: open, practical, and readable without insider vocabulary.</p>
         <ul class="tier-list">
-          <li>Blockchain &amp; wallet-featured app reviews</li>
-          <li>Beginner walkthroughs and guides</li>
-          <li>Market commentary and news editorial</li>
-          <li>Crypto betting platform analysis</li>
-          <li>Weekly experiments and results</li>
+          <li>Wallet and app teardowns</li>
+          <li>Plain-language explainers and quick guides</li>
+          <li>Market context and editorial framing</li>
+          <li>Security notes and caution flags</li>
+          <li>Working experiments and visible lessons</li>
         </ul>
       </div>
       <div class="tier t-sub rv">
         <span class="tier-label">Newsletter</span>
-        <h3>Subscriber Access</h3>
-        <p class="tier-desc">Deeper research. Earlier signals. Subscriber-only intelligence.</p>
+        <h3>Deeper Briefings</h3>
+        <p class="tier-desc">Longer notes, earlier drafts, tighter workflows, and sharper context for people following closely.</p>
         <ul class="tier-list">
-          <li>Early airdrop tracking — vetted opportunities</li>
-          <li>Advanced DeFi strategy breakdowns</li>
-          <li>Little-known tools and projects before they surface</li>
-          <li>Rebecca's Pick — curated weekly find</li>
-          <li>Deeper cuts ahead of public release</li>
+          <li>Tool shortlists and experiment logs</li>
+          <li>AI-assisted research briefings with clear caveats</li>
+          <li>Early looks at subscriber-only deep dives</li>
+          <li>Signal Pick with open and paid variants</li>
+          <li>More context around practical next steps</li>
         </ul>
-        <p class="tier-note">Paid tier launches once the foundation is built. Free subscribers get first access.</p>
+        <p class="tier-note">The goal is not dependency. It is helping readers think, choose, and act for themselves.</p>
       </div>
     </div>
   </div>
@@ -712,11 +741,10 @@
   <div class="wrap">
     <div class="pick-wrap rv">
       <span class="pick-icon">✦</span>
-      <h2><span>Rebecca's Pick</span></h2>
+      <h2><span>Signal Pick</span></h2>
       <p>
-        One standout app, tool, or opportunity per cycle — selected by our AI research assistant Rebecca
-        and reviewed by Flaveon. Free and subscriber variants each release. No filler. Just what's
-        worth paying attention to this week.
+        One app, workflow, tool, or opportunity worth a closer look each cycle. AI can help with
+        research, but the point is still human judgment, clear caveats, and practical usefulness.
       </p>
 
       <!-- AI Disclosure -->
@@ -732,8 +760,8 @@
         line-height: 1.7;
         text-align: left;
       ">
-        <strong style="color:var(--indigo); letter-spacing:0.08em; text-transform:uppercase; font-size:0.66rem;">⚙ AI-Generated Content</strong><br>
-        Rebecca's Pick is researched and drafted by an AI assistant. All picks are reviewed but not professionally verified.
+        <strong style="color:var(--indigo); letter-spacing:0.08em; text-transform:uppercase; font-size:0.66rem;">⚙ AI-Assisted Research</strong><br>
+        Signal Pick may be researched and first-drafted with AI support. All picks are reviewed, but they are not professionally certified or guaranteed.
         <strong style="color:var(--text)">This is not financial advice.</strong> Not a recommendation to buy, sell, or use any product.
         All opinions are for informational purposes only. Do your own research before acting on anything here.
       </div>
@@ -743,25 +771,25 @@
         margin: 0 auto 1.75rem;
         max-width: 560px;
         border-radius: 12px;
-        border: 1px solid rgba(255,110,199,0.18);
+        border: 1px solid rgba(245,166,35,0.18);
         overflow: hidden;
         font-size: 0.85rem;
       ">
         <div style="
-          background: rgba(45,27,78,0.7);
+          background: rgba(19,27,36,0.8);
           padding: 0.65rem 1.1rem;
           font-size: 0.68rem; font-weight: 800;
           letter-spacing: 0.16em; text-transform: uppercase;
           color: var(--muted);
-          border-bottom: 1px solid rgba(168,85,247,0.12);
+          border-bottom: 1px solid rgba(245,166,35,0.12);
           text-align: left;
-        ">Rebecca's Pick — All-Time Record</div>
+        ">Signal Pick — All-Time Record</div>
         <div style="display:grid; grid-template-columns: repeat(3,1fr);">
-          <div style="padding:1rem; text-align:center; border-right:1px solid rgba(168,85,247,0.1);">
+          <div style="padding:1rem; text-align:center; border-right:1px solid rgba(245,166,35,0.1);">
             <div style="font-size:1.6rem; font-weight:800; color:#4ade80;" id="rp-wins">—</div>
             <div style="font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.2rem;">Wins</div>
           </div>
-          <div style="padding:1rem; text-align:center; border-right:1px solid rgba(168,85,247,0.1);">
+          <div style="padding:1rem; text-align:center; border-right:1px solid rgba(245,166,35,0.1);">
             <div style="font-size:1.6rem; font-weight:800; color:#f87171;" id="rp-losses">—</div>
             <div style="font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.2rem;">Losses</div>
           </div>
@@ -773,20 +801,19 @@
         <div style="
           padding: 0.5rem 1.1rem;
           background: rgba(10,1,24,0.4);
-          font-size: 0.7rem; color: rgba(157,142,196,0.5);
+          font-size: 0.7rem; color: rgba(182,176,167,0.6);
           font-style: italic; text-align: left;
-          border-top: 1px solid rgba(168,85,247,0.08);
-        ">Tracker launches with first pick. Win/loss defined by stated criteria at time of pick — not financial performance.</div>
+          border-top: 1px solid rgba(245,166,35,0.08);
+        ">Tracker launches with the first published review framework. Outcomes will be defined by stated criteria, not hindsight marketing.</div>
       </div>
 
       <div class="pick-badges">
-        <span class="pick-badge pb-free">Free Variant</span>
-        <span class="pick-badge pb-paid">Subscriber Variant</span>
+        <span class="pick-badge pb-free">Open Brief</span>
+        <span class="pick-badge pb-paid">Deep Brief</span>
       </div>
-      <a href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-fill">Subscribe for Early Access</a>
+      <a href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-fill">Subscribe for the Deep Briefs</a>
       <p class="pick-disclaimer">
-        AI-researched. Human-reviewed. Not financial advice. Not a fiduciary. For informational purposes only.
-        All picks represent personal opinion. Do your own research.
+        AI-assisted. Human-reviewed. Advisory when uncertainty is high. Personal opinion, not professional guidance.
       </p>
     </div>
   </div>
@@ -798,46 +825,46 @@
 <section id="coming">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow">The Universe</span>
-      <h2>What's <span class="violet">Coming</span></h2>
+      <span class="eyebrow">Roadmap</span>
+      <h2>Where this is going.</h2>
       <div class="divider c"></div>
-      <p class="sec-sub">Quarters2Crypto is a launchpad. These are the projects we're building toward.</p>
+      <p class="sec-sub">Q2C is one bridge inside the wider ConcordiaPax ecosystem.</p>
     </div>
     <div class="roadmap">
       <div class="rm-card rv">
         <div class="rm-num">Phase 01</div>
-        <h3>Media &amp; Content</h3>
-        <p>Comics, YouTube, and social presence. The Q2C voice, expanded beyond text.</p>
+        <h3>Editorial Lab</h3>
+        <p>Site, newsletter, guides, and a cleaner archive of field-tested notes people can actually reuse.</p>
         <span class="rm-status">In Motion</span>
       </div>
       <div class="rm-card rv">
         <div class="rm-num">Phase 02</div>
-        <h3>AI Infrastructure</h3>
-        <p>Public AI built for people, not corporations. Includes a legislative support initiative.</p>
+        <h3>Tooling Bench</h3>
+        <p>Checklists, calculators, dashboards, and small utilities that reduce friction around digital assets and online systems.</p>
         <span class="rm-status">Coming Soon</span>
       </div>
       <div class="rm-card rv">
         <div class="rm-num">Phase 03</div>
-        <h3>Gnosis</h3>
-        <p>Civic participation rebuilt from scratch. Transparent AI. 60 seconds a day. Collective decision-making that respects your time.</p>
+        <h3>AI for Regular People</h3>
+        <p>Applied AI workflows that support literacy, research, and execution without pretending everyone wants to become an engineer.</p>
         <span class="rm-status">In Design</span>
       </div>
       <div class="rm-card rv">
         <div class="rm-num">Phase 04</div>
-        <h3>EpicOS</h3>
-        <p>Privacy-first home intelligence. Local-first. Your devices, your data, your rules. Running on PinkPerfection — our home server node.</p>
+        <h3>Digital Economy Guides</h3>
+        <p>More grounded coverage of commerce rails, creator tooling, reward systems, and where crypto intersects with ordinary work.</p>
         <span class="rm-status">In Development</span>
       </div>
       <div class="rm-card rv">
         <div class="rm-num">Phase 05</div>
-        <h3>Market Integration</h3>
-        <p>Etsy, eBay, and marketplace connectivity — where crypto meets everyday commerce.</p>
+        <h3>Security Literacy</h3>
+        <p>Simple risk habits, account hygiene, and self-custody education that helps readers become more independent and resilient.</p>
         <span class="rm-status">Planned</span>
       </div>
       <div class="rm-card rv">
         <div class="rm-num">Phase 06</div>
-        <h3>BCI Compression</h3>
-        <p>Memory compression for AI agents. 90% token reduction. Human-like recall patterns.</p>
+        <h3>ConcordiaPax Bridge</h3>
+        <p>Stronger connective tissue between Q2C, practical AI systems, and the broader ConcordiaPax mission of useful technology.</p>
         <span class="rm-status">Planned</span>
       </div>
     </div>
@@ -852,11 +879,11 @@
     <div class="cta-glow"></div>
     <div class="rv">
       <span class="eyebrow">Start Here</span>
-      <h2>Start Your <span>Web3 Income Lab</span> Today.</h2>
+      <h2>Start with the <span>useful stuff</span>.</h2>
       <div class="divider c"></div>
-      <p>We're building in public. Come make mistakes with us — only Flaveon gets hurt.</p>
+      <p>Follow the field notes, keep the caveats, and use what helps. Leave the theater behind.</p>
       <div class="cta-row">
-        <a href="#story" class="btn btn-fill">Read the Start Guide</a>
+        <a href="#story" class="btn btn-fill">Read the Origin</a>
         <a href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-outline">Subscribe for Updates</a>
       </div>
     </div>
@@ -888,19 +915,19 @@
         <p>Crypto assets are <strong style="color:var(--text)">highly speculative and volatile</strong>. Past performance is not indicative of future results. Any mention of specific projects, platforms, tokens, or strategies reflects personal experience and opinion only. Always conduct thorough independent due diligence before making any financial decision.</p>
       </div>
       <div class="l-block rv">
-        <h3>Opinions Are Personal</h3>
-        <p>All views, analysis, and commentary expressed on this platform are <strong style="color:var(--text)">solely those of Flaveon and/or the Q2C team</strong> at the time of publication. They do not represent the views of any affiliated entities, sponsors, or third parties. Opinions may change without notice and without obligation to update.</p>
+        <h3>Experimental Content</h3>
+        <p>Some coverage here involves emerging tools, experimental workflows, or early-stage systems. We aim to <strong style="color:var(--text)">tell the truth clearly about what is known, what is uncertain, and what is still being tested</strong>. Not every experiment becomes a recommendation.</p>
       </div>
     </div>
 
     <div class="l-full rv">
-      <h3>Gambling &amp; Betting Content — Special Disclaimer</h3>
+      <h3>Technology &amp; AI Content</h3>
       <p>
-        Quarters2Crypto occasionally features content analyzing cryptocurrency-based gambling and betting platforms and associated strategies. This content is presented <strong style="color:var(--text)">strictly for informational and analytical purposes only</strong>. We do not endorse, promote, encourage, or facilitate gambling of any kind. Crypto betting involves substantial risk of loss and is inherently speculative. Gambling may be illegal in your jurisdiction — it is your sole responsibility to verify and comply with all applicable local laws before participating in any gambling activity.
+        Quarters2Crypto may feature automation, AI-assisted research, and software-oriented workflows. These materials are presented <strong style="color:var(--text)">for informational and educational purposes only</strong>. We do not guarantee that any tool, model, service, or workflow will be suitable for your environment, your business, or your risk tolerance.
         <br><br>
-        If you or someone you know has a gambling problem, please seek help immediately. Contact the <strong style="color:var(--text)">National Problem Gambling Helpline: 1-800-522-4700</strong> (US) or your regional equivalent.
+        AI-assisted outputs may be incomplete, mistaken, stale, or context-limited. When uncertainty is high or consequences are material, advisory framing matters more than speed.
         <br><br>
-        <strong style="color:var(--pink)">Never gamble with funds you cannot afford to lose entirely.</strong>
+        <strong style="color:var(--gold)">Use judgment. Verify important claims. Treat convenience as a tool, not as proof.</strong>
       </p>
     </div>
 
@@ -909,9 +936,9 @@
       <p>
         Investing in, trading, or otherwise engaging with cryptocurrencies and digital assets carries <strong style="color:var(--text)">significant financial risk</strong>, including the possibility of total and permanent loss of capital. The cryptocurrency market is largely unregulated in many jurisdictions, subject to extreme price volatility, susceptible to hacking, technical failure, and fraud, and may be materially affected by regulatory changes at any time and without notice.
         <br><br>
-        Airdrop participation, DeFi protocol interactions, yield-generating strategies, and move-to-earn or play-to-earn platforms carry additional smart contract risk, counterparty risk, and liquidity risk. Past earnings described in our content — including personal results such as STEPN — are <strong style="color:var(--text)">not typical and not guaranteed</strong>.
+        Wallet usage, onchain incentives, protocol participation, yield strategies, and new digital platforms carry additional smart contract risk, counterparty risk, operational risk, and liquidity risk. Examples discussed on this site are <strong style="color:var(--text)">not typical and not guaranteed</strong>.
         <br><br>
-        <strong style="color:var(--pink)">Only engage with capital you are fully prepared to lose entirely. This is not a recommendation to buy, sell, or hold any asset.</strong>
+        <strong style="color:var(--gold)">Only engage with capital, platforms, and workflows you are prepared to evaluate and, if necessary, walk away from entirely.</strong>
       </p>
     </div>
 
@@ -924,7 +951,7 @@
 
     <div class="legal-stamp">
       <p>© 2026 Quarters2Crypto &nbsp;·&nbsp; quarters2crypto.com &nbsp;·&nbsp; All rights reserved.</p>
-      <p>Content is for informational purposes only. Not financial advice. Not investment advice. Do your own research. All opinions are personal and do not constitute professional guidance of any kind.</p>
+      <p>Practical field notes only. Not financial advice. Not legal advice. Not tax advice. Verify what matters and keep your own judgment switched on.</p>
     </div>
   </div>
 </section>
@@ -937,16 +964,16 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="Quarters2Crypto/Q2C%20Pics/quarter2crypto_logo.png" alt="Quarters2Crypto">
-        <p>Real-world experiments in Web3 income. Built in public by Flaveon. No hype. Just field notes.</p>
+        <p>Practical field notes for the digital economy. Built in public by Flaveon. Useful over flashy.</p>
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
         <ul>
-          <li><a href="#story">My Story</a></li>
-          <li><a href="#what-here">What's Here</a></li>
+          <li><a href="#story">Why Q2C</a></li>
+          <li><a href="#what-here">Topics</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#rebeccas-pick">Rebecca's Pick</a></li>
-          <li><a href="#coming">Coming Soon</a></li>
+          <li><a href="#rebeccas-pick">Signal Pick</a></li>
+          <li><a href="#coming">Roadmap</a></li>
           <li><a href="#legal">Legal</a></li>
         </ul>
       </div>
@@ -962,7 +989,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Quarters2Crypto &nbsp;·&nbsp; Not financial advice.</span>
-      <span class="footer-tag">Turn Curiosity Into Coin.</span>
+      <span class="footer-tag">Bridging crypto and real life.</span>
     </div>
   </div>
 </footer>
@@ -977,7 +1004,7 @@
   const ctx    = canvas.getContext('2d');
   let   stars  = [];
   const N      = 190;
-  const COLORS = ['#ffffff','#a855f7','#ff6ec7','#4da6ff','#fbbf24'];
+  const COLORS = ['#fffdf8','#7e73a9','#b68558','#7fd1c4','#f5a623'];
 
   function resize() {
     canvas.width  = window.innerWidth;
