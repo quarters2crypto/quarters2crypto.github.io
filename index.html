@@ -3,1342 +3,244 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quarters2Crypto — Practical Crypto Field Notes</title>
-  <meta name="description" content="Practical crypto field notes for people navigating the digital economy. Wallet-tested tools, security habits, market context, AI-assisted workflows, and real-world experiments by Flaveon.">
+  <title>Quarters2Crypto — A Builder's Notebook</title>
+  <meta name="description" content="The public notebook of Flaveon: experiments at the edge of AI, autonomy, computation, crypto, and cosmic daydreaming. Building things to see what happens.">
+  <link rel="canonical" href="https://quarters2crypto.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Quarters2Crypto">
+  <meta property="og:title" content="Quarters2Crypto — A Builder's Notebook">
+  <meta property="og:description" content="Experiments at the edge of AI, autonomy, computation, crypto, and cosmic daydreaming. Building things to see what happens.">
+  <meta property="og:url" content="https://quarters2crypto.com/">
+  <meta property="og:image" content="https://quarters2crypto.com/media/images/q2c-hero-bg.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@flaveon316">
+  <meta name="twitter:title" content="Quarters2Crypto — A Builder's Notebook">
+  <meta name="twitter:description" content="Experiments at the edge of AI, autonomy, computation, crypto, and cosmic daydreaming.">
+
+  <link rel="icon" type="image/png" href="/media/images/q2c-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-0:       #081015;
-      --bg-1:       #131b24;
-      --bg-2:       #1d2934;
-      --pink:       #b68558;
-      --violet:     #7e73a9;
-      --indigo:     #89a7c7;
-      --gold:       #f5a623;
-      --gold-dim:   #cf8613;
-      --blue:       #7fd1c4;
-      --white:      #fffdf8;
-      --text:       #ebebea;
-      --muted:      #b6b0a7;
-      --card:       rgba(24,31,40,0.68);
-      --border:     rgba(166,142,102,0.20);
-      --nav-h:      68px;
-      --glow-v:     0 0 22px rgba(126,115,169,0.22);
-      --glow-p:     0 0 22px rgba(182,133,88,0.18);
-      --glow-g:     0 0 24px rgba(245,166,35,0.28);
-      --ease:       0.3s ease;
-      --radius:     16px;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Source Serif 4', Georgia, serif;
-      background: var(--bg-0);
-      color: var(--text);
-      line-height: 1.75;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      position: relative;
-    }
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at 16% 18%, rgba(245,166,35,0.10), transparent 24%),
-        radial-gradient(circle at 82% 18%, rgba(126,115,169,0.10), transparent 22%),
-        radial-gradient(circle at 72% 80%, rgba(182,133,88,0.10), transparent 24%);
-      pointer-events: none;
-      z-index: 0;
-    }
-    a { color: var(--violet); text-decoration: none; transition: color var(--ease); }
-    a:hover { color: var(--gold); }
-    img { max-width: 100%; display: block; }
+  <link rel="stylesheet" href="/brand-kit/cpax-q2c-theme.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="/assets/js/site.js" defer></script>
 
-    /* ── STARFIELD ─────────────────────────────────── */
-    #starfield {
-      position: fixed; inset: 0;
-      pointer-events: none; z-index: 0;
-    }
-
-    /* ── NAV ───────────────────────────────────────── */
-    #nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      height: var(--nav-h);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 2rem;
-      background: rgba(10,1,24,0.82);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(245,166,35,0.12);
-      z-index: 999;
-      transition: background var(--ease);
-    }
-    #nav.scrolled { background: rgba(10,1,24,0.97); }
-    .nav-brand {
-      display: flex; align-items: center; gap: 0.7rem;
-      text-decoration: none; flex-shrink: 0;
-    }
-    .nav-brand img { height: 38px; width: auto; }
-    .nav-brand-text {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.86rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      background: linear-gradient(90deg, var(--gold), var(--white));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: block;
-    }
-    .nav-links {
-      list-style: none; display: flex;
-      align-items: center; gap: 1.75rem;
-    }
-    .nav-links a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.74rem; font-weight: 500;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--muted); transition: color var(--ease);
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-    .nav-sub {
-      padding: 0.45rem 1.2rem;
-      background: linear-gradient(135deg, var(--gold), var(--pink));
-      border: 1px solid rgba(245,166,35,0.35);
-      border-radius: 999px; font-size: 0.76rem; font-weight: 700;
-      color: #1a1a1a !important; letter-spacing: 0.08em; text-transform: uppercase;
-      box-shadow: var(--glow-g);
-      transition: box-shadow var(--ease), transform var(--ease);
-    }
-    .nav-sub:hover { box-shadow: var(--glow-p); transform: translateY(-1px); color: #1a1a1a !important; }
-    .hamburger {
-      display: none; flex-direction: column;
-      gap: 5px; cursor: pointer; padding: 4px;
-    }
-    .hamburger span {
-      display: block; width: 22px; height: 2px;
-      background: var(--text); border-radius: 2px;
-      transition: all var(--ease);
-    }
-
-    /* ── LAYOUT HELPERS ────────────────────────────── */
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
-    section { position: relative; z-index: 1; }
-    .eyebrow {
-      display: inline-block;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 0.7rem;
-    }
-    .divider {
-      width: 52px; height: 2px; border-radius: 2px;
-      background: linear-gradient(90deg, var(--gold), var(--violet));
-      margin: 1.25rem 0;
-    }
-    .divider.c { margin: 1.25rem auto; }
-    h1 { font-size: clamp(2.4rem,6vw,4.4rem); line-height: 1.12; font-weight: 800; }
-    h2 { font-size: clamp(1.7rem,4vw,2.4rem); line-height: 1.2; font-weight: 700; }
-    h1, h2, h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      letter-spacing: -0.025em;
-    }
-    h3 { font-size: 1.1rem; font-weight: 700; }
-    .grad-text {
-      background: linear-gradient(135deg, #fff 0%, var(--gold) 28%, var(--white) 58%, var(--violet) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .pink { color: var(--gold-dim); }
-    .gold { color: var(--gold); }
-    .violet { color: var(--violet); }
-
-    /* reveal animation */
-    .rv { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
-    .rv.in { opacity: 1; transform: none; }
-
-    /* ── HERO ──────────────────────────────────────── */
-    #hero {
-      min-height: 100vh;
-      display: flex; align-items: center;
-      padding-top: var(--nav-h);
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background: url("/media/images/q2c-hero-bg.png") center 28% / cover no-repeat;
-      opacity: 0.28; z-index: 0;
-    }
-    .hero-bg::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom,
-        rgba(8,16,21,0.18) 0%,
-        rgba(8,16,21,0.58) 46%,
-        rgba(8,16,21,1) 100%);
-    }
-    .hero-inner {
-      position: relative; z-index: 2;
-      max-width: 780px;
-    }
-    .hero-icon {
-      width: 84px; height: 84px;
-      margin-bottom: 2rem;
-      animation: levitate 7s ease-in-out infinite;
-      filter: drop-shadow(0 0 18px rgba(245,166,35,0.28));
-    }
-    @keyframes levitate {
-      0%,100% { transform: translateY(0) rotate(0deg); }
-      50%      { transform: translateY(-11px) rotate(2deg); }
-    }
-    .hero-alias {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 0.9rem;
-    }
-    .hero-sub {
-      font-size: 1.15rem; color: var(--muted);
-      max-width: 580px; margin: 1.5rem 0 2.5rem;
-      line-height: 1.8;
-    }
-    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-block; padding: 0.8rem 1.9rem;
-      border-radius: 999px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem; transition: all var(--ease);
-    }
-    .btn-fill {
-      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
-      color: #151515; box-shadow: var(--glow-g);
-    }
-    .btn-fill:hover { color: #151515; box-shadow: var(--glow-p); transform: translateY(-2px); }
-    .btn-outline {
-      border: 1px solid rgba(245,166,35,0.32);
-      color: var(--gold);
-      background: rgba(245,166,35,0.08);
-      backdrop-filter: blur(8px);
-    }
-    .btn-outline:hover { color: var(--white); border-color: rgba(245,166,35,0.46); background: rgba(245,166,35,0.13); }
-
-    /* ── STORY ─────────────────────────────────────── */
-    #story { padding: 8rem 0 6rem; }
-    .story-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 5rem; align-items: center;
-    }
-    .story-orb-wrap { display: flex; justify-content: center; align-items: center; }
-    .story-orb {
-      width: 270px; height: 270px; border-radius: 50%;
-      background: radial-gradient(circle at 38% 32%, var(--bg-2), var(--bg-0));
-      border: 1px solid rgba(245,166,35,0.20);
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 70px rgba(126,115,169,0.12),
-                  0 0 140px rgba(245,166,35,0.08),
-                  inset 0 0 50px rgba(8,16,21,0.6);
-      position: relative;
-    }
-    .story-orb::after {
-      content: ''; position: absolute; inset: -3px;
-      border-radius: 50%;
-      background: conic-gradient(var(--gold-dim), var(--violet), var(--indigo), var(--gold));
-      z-index: -1; opacity: 0.35; filter: blur(6px);
-      animation: spin 12s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .story-orb img { width: 155px; height: 155px; }
-    .story-copy h2 { margin-bottom: 0.25rem; }
-    .story-copy p { color: var(--muted); font-size: 1.02rem; margin-bottom: 1.1rem; }
-    .story-copy strong { color: var(--white); }
-    .pull-quote {
-      padding: 0.7rem 1.1rem;
-      border-left: 3px solid var(--gold);
-      background: rgba(251,191,36,0.07);
-      border-radius: 0 8px 8px 0;
-      color: var(--gold); font-style: italic;
-      font-size: 1rem; margin: 1.25rem 0;
-      line-height: 1.6;
-    }
-    .story-tag {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      margin-top: 0.5rem;
-      font-size: 0.78rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--violet);
-    }
-    .story-tag::before { content: '◈'; font-size: 0.65rem; }
-
-    /* ── WHAT'S HERE ───────────────────────────────── */
-    #what-here {
-      padding: 6rem 0;
-      background: linear-gradient(180deg, transparent, rgba(245,166,35,0.05), transparent);
-    }
-    .sec-head { text-align: center; margin-bottom: 3.5rem; }
-    .sec-head h2 { margin-bottom: 0.3rem; }
-    .sec-sub { color: var(--muted); margin-top: 0.6rem; font-size: 1rem; }
-    .features {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1.4rem;
-    }
-    .f-card {
-      padding: 1.8rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      backdrop-filter: blur(12px);
-      transition: all var(--ease);
-      position: relative; overflow: hidden;
-    }
-    .f-card::after {
-      content: ''; position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, transparent, var(--violet), transparent);
-      opacity: 0; transition: opacity var(--ease);
-    }
-    .f-card:hover { border-color: rgba(245,166,35,0.28); transform: translateY(-4px); box-shadow: 0 14px 42px rgba(8,16,21,0.5); }
-    .f-card:hover::after { opacity: 1; }
-    .f-icon { font-size: 1.9rem; margin-bottom: 0.85rem; display: block; }
-    .f-card h3 { color: var(--white); margin-bottom: 0.4rem; font-size: 1rem; }
-    .f-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
-    .badge {
-      display: inline-block; margin-top: 0.8rem;
-      font-size: 0.66rem; font-weight: 800;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 0.18rem 0.55rem; border-radius: 999px;
-    }
-    .b-free { background: rgba(99,102,241,0.15); color: var(--indigo); border: 1px solid rgba(99,102,241,0.28); }
-    .b-sub  { background: rgba(251,191,36,0.12);  color: var(--gold);   border: 1px solid rgba(251,191,36,0.28); }
-    .features-note {
-      text-align: center; margin-top: 2.25rem;
-      font-size: 0.88rem; color: var(--muted); font-style: italic;
-      letter-spacing: 0.04em;
-    }
-
-    /* ── HOW IT WORKS ──────────────────────────────── */
-    #how-it-works { padding: 6rem 0; }
-    .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; margin-top: 3rem; }
-    .tier {
-      padding: 2.25rem; border-radius: 20px;
-      border: 1px solid var(--border);
-      backdrop-filter: blur(12px);
-      position: relative; overflow: hidden;
-    }
-    .tier.t-free { background: rgba(29,41,52,0.48); }
-    .tier.t-sub  {
-      background: linear-gradient(145deg, rgba(245,166,35,0.08), rgba(126,115,169,0.08));
-      border-color: rgba(245,166,35,0.24);
-    }
-    .tier-label {
-      display: inline-block; margin-bottom: 1.1rem;
-      font-size: 0.68rem; font-weight: 800;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      padding: 0.28rem 0.75rem; border-radius: 999px;
-    }
-    .t-free .tier-label { background: rgba(99,102,241,0.18); color: var(--indigo); border: 1px solid rgba(99,102,241,0.28); }
-    .t-sub  .tier-label { background: linear-gradient(135deg,var(--gold),var(--gold-dim)); color: #1a1a1a; }
-    .tier h3 { font-size: 1.35rem; color: var(--white); margin-bottom: 0.4rem; }
-    .tier-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.4rem; }
-    .tier-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    .tier-list li {
-      display: flex; align-items: flex-start; gap: 0.6rem;
-      font-size: 0.93rem; color: var(--text);
-    }
-    .tier-list li::before {
-      content: '◆'; font-size: 0.5rem;
-      color: var(--violet); margin-top: 0.55em; flex-shrink: 0;
-    }
-    .t-sub .tier-list li::before { color: var(--gold-dim); }
-    .tier-note {
-      margin-top: 1.5rem; font-size: 0.78rem;
-      color: var(--muted); font-style: italic;
-    }
-
-    /* ── REBECCA'S PICK ────────────────────────────── */
-    #rebeccas-pick { padding: 6rem 0; }
-    .pick-wrap {
-      max-width: 780px; margin: 0 auto;
-      padding: 3rem 2.5rem;
-      border-radius: 24px;
-      background: linear-gradient(145deg, rgba(29,41,52,0.72), rgba(8,16,21,0.88));
-      border: 1px solid rgba(245,166,35,0.18);
-      text-align: center;
-      backdrop-filter: blur(18px);
-      position: relative; overflow: hidden;
-    }
-    .pick-wrap::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(245,166,35,0.08), transparent 65%);
-      pointer-events: none;
-    }
-    .pick-icon { font-size: 2.2rem; display: block; margin-bottom: 1rem; }
-    .pick-wrap h2 { margin-bottom: 0.65rem; }
-    .pick-wrap h2 span {
-      background: linear-gradient(90deg, var(--gold), var(--white));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .pick-wrap p { color: var(--muted); font-size: 1rem; max-width: 480px; margin: 0 auto 1.75rem; }
-    .pick-badges { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
-    .pick-badge {
-      padding: 0.32rem 0.9rem; border-radius: 999px;
-      font-size: 0.75rem; font-weight: 700;
-    }
-    .pb-free { background: rgba(99,102,241,0.14); border: 1px solid rgba(99,102,241,0.28); color: var(--indigo); }
-    .pb-paid { background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.28); color: var(--gold); }
-    .pick-disclaimer {
-      margin-top: 1.5rem; font-size: 0.75rem;
-      color: rgba(157,142,196,0.55); font-style: italic;
-    }
-
-    /* ── COMING ────────────────────────────────────── */
-    #coming { padding: 6rem 0; }
-    .roadmap {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      gap: 1.25rem; margin-top: 3rem;
-    }
-    .rm-card {
-      padding: 1.4rem 1.5rem;
-      background: rgba(19,27,36,0.72);
-      border: 1px solid rgba(99,102,241,0.14);
-      border-radius: 14px; backdrop-filter: blur(8px);
-      transition: all var(--ease);
-    }
-    .rm-card:hover { border-color: rgba(245,166,35,0.24); transform: translateY(-3px); }
-    .rm-num {
-      font-size: 0.65rem; font-weight: 800;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--violet); margin-bottom: 0.45rem;
-    }
-    .rm-card h3 { font-size: 0.98rem; color: var(--white); margin-bottom: 0.3rem; }
-    .rm-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.55; }
-    .rm-status {
-      display: inline-block; margin-top: 0.7rem;
-      font-size: 0.62rem; font-weight: 800;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 0.18rem 0.55rem; border-radius: 999px;
-      background: rgba(251,191,36,0.09);
-      color: var(--gold-dim);
-      border: 1px solid rgba(251,191,36,0.2);
-    }
-
-    /* ── FINAL CTA ─────────────────────────────────── */
-    #cta-final {
-      padding: 8rem 0; text-align: center;
-    }
-    .cta-glow {
-      position: absolute;
-      width: 520px; height: 520px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(245,166,35,0.12), transparent 70%);
-      top: 50%; left: 50%; transform: translate(-50%,-50%);
-      pointer-events: none;
-    }
-    #cta-final h2 span {
-      background: linear-gradient(135deg, var(--gold), var(--white));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    #cta-final p { color: var(--muted); font-size: 1.05rem; margin: 1rem 0 2.25rem; }
-    .cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-    /* ── LEGAL ─────────────────────────────────────── */
-    #legal {
-      padding: 5rem 0 4rem;
-      background: rgba(10,1,24,0.75);
-      border-top: 1px solid rgba(245,166,35,0.10);
-    }
-    #legal .sec-head h2 { color: var(--muted); font-size: 1.4rem; }
-    .legal-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1.5rem; margin-bottom: 1.5rem;
-    }
-    .l-block {
-      padding: 1.6rem;
-      background: rgba(26,11,46,0.5);
-      border: 1px solid rgba(245,166,35,0.10);
-      border-radius: 12px;
-    }
-    .l-block h3 {
-      font-size: 0.72rem; font-weight: 800;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--violet); margin-bottom: 0.65rem;
-      display: flex; align-items: center; gap: 0.45rem;
-    }
-    .l-block h3::before { content: '§'; color: var(--gold-dim); font-style: italic; }
-    .l-block p { font-size: 0.83rem; color: var(--muted); line-height: 1.85; }
-    .l-full {
-      padding: 1.75rem 2rem; margin-bottom: 1.5rem;
-      background: rgba(10,1,24,0.55);
-      border: 1px solid rgba(245,166,35,0.12);
-      border-radius: 12px;
-    }
-    .l-full h3 {
-      font-size: 0.7rem; font-weight: 800;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--gold-dim); margin-bottom: 0.85rem;
-    }
-    .l-full p { font-size: 0.8rem; color: var(--muted); line-height: 1.95; }
-    .legal-stamp {
-      text-align: center; padding-top: 2rem;
-      border-top: 1px solid rgba(245,166,35,0.08);
-      font-size: 0.73rem;
-      color: rgba(157,142,196,0.45);
-      line-height: 1.8;
-    }
-
-    /* ── FOOTER ────────────────────────────────────── */
-    footer {
-      padding: 3rem 0 2rem;
-      border-top: 1px solid rgba(245,166,35,0.10);
-      position: relative; z-index: 1;
-    }
-    .footer-grid {
-      display: grid; grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem; margin-bottom: 2rem;
-    }
-    .footer-brand img { height: 38px; width: auto; }
-    .footer-brand p {
-      color: var(--muted); font-size: 0.87rem;
-      margin-top: 0.7rem; max-width: 280px; line-height: 1.7;
-    }
-    .footer-col h4 {
-      font-size: 0.68rem; font-weight: 800;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 1rem;
-    }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
-    .footer-col ul a { font-size: 0.87rem; color: var(--muted); transition: color var(--ease); }
-    .footer-col ul a:hover { color: var(--gold); }
-    .footer-bottom {
-      display: flex; justify-content: space-between; align-items: center;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(245,166,35,0.07);
-      font-size: 0.76rem; color: rgba(157,142,196,0.45);
-      flex-wrap: wrap; gap: 0.75rem;
-    }
-    .footer-tag { color: var(--violet); opacity: 0.6; font-style: italic; }
-
-    /* ── RESPONSIVE ────────────────────────────────── */
-    @media (max-width: 900px) {
-      .story-grid    { grid-template-columns: 1fr; gap: 3rem; }
-      .story-orb-wrap { order: -1; }
-      .features      { grid-template-columns: repeat(2,1fr); }
-      .tiers         { grid-template-columns: 1fr; }
-      .roadmap       { grid-template-columns: repeat(2,1fr); }
-      .footer-grid   { grid-template-columns: 1fr 1fr; }
-      .footer-brand  { grid-column: 1/-1; }
-      .legal-grid    { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 600px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .nav-links.open {
-        display: flex; flex-direction: column;
-        position: fixed; top: var(--nav-h); left: 0; right: 0;
-        background: rgba(10,1,24,0.98);
-        backdrop-filter: blur(18px);
-        padding: 2rem; gap: 1.5rem;
-        border-bottom: 1px solid rgba(245,166,35,0.14);
-        z-index: 998;
-      }
-      .features    { grid-template-columns: 1fr; }
-      .roadmap     { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Quarters2Crypto",
+    "url": "https://quarters2crypto.com",
+    "description": "A public builder's notebook: AI, autonomy, computation, crypto, and cosmic daydreaming.",
+    "author": { "@type": "Person", "name": "Flaveon", "url": "https://substack.com/@flaveon" }
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<canvas id="starfield"></canvas>
-
-<!-- ═══════════════════════════════════════════════
-     NAV
-════════════════════════════════════════════════ -->
-<nav id="nav">
-  <a href="#hero" class="nav-brand">
-    <img id="nav-brand-icon" src="/media/images/q2c-icon.png" alt="Q2C Icon">
-    <span class="nav-brand-text">Quarters2Crypto</span>
-  </a>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#story">Why Q2C</a></li>
-    <li><a href="#what-here">Topics</a></li>
-    <li><a href="#how-it-works">Model</a></li>
-    <li><a href="#coming">Roadmap</a></li>
-    <li><a href="#legal">Legal</a></li>
-    <li><a id="nav-subscribe-link" href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="nav-sub">Subscribe</a></li>
-  </ul>
-  <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-
-<!-- ═══════════════════════════════════════════════
-     HERO
-════════════════════════════════════════════════ -->
-<section id="hero">
-  <div class="hero-bg" id="hero-bg"></div>
-  <div class="wrap">
-    <div class="hero-inner">
-      <p class="hero-alias" id="hero-alias">Quarters2Crypto · Bridging Crypto and Real Life</p>
-      <img id="hero-icon" src="/media/images/q2c-icon.png" alt="Q2C Emblem" class="hero-icon">
-      <h1 class="grad-text" id="hero-headline">Make modern crypto<br>more useful.</h1>
-      <p class="hero-sub" id="hero-summary">
-        Q2C translates wallets, digital assets, AI-assisted tools, and online earning experiments
-        into practical field notes for ordinary people. Less hype. More signal. More agency.
-      </p>
-      <div class="hero-ctas">
-        <a id="hero-primary-cta" href="#what-here" class="btn btn-fill">Explore the Topics</a>
-        <a id="hero-secondary-cta" href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-outline">Read on Substack</a>
+  <nav id="nav" aria-label="Primary">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <img src="/media/images/q2c-logo.png" alt="Quarters2Crypto logo" width="30" height="30">
+        <span class="wordmark">Quarters2Crypto</span>
+      </a>
+      <div class="nav-links">
+        <a href="/articles.html">Articles</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/lab.html">Lab</a>
+        <a href="/about.html">About</a>
+        <a class="phaseone-nav" href="/lab.html#phaseone">Phaseone10841<span class="soon">· soon</span></a>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- ═══════════════════════════════════════════════
-     STORY
-════════════════════════════════════════════════ -->
-<section id="story">
-  <div class="wrap">
-    <div class="story-grid">
-      <div class="story-copy rv">
-        <span class="eyebrow" id="story-eyebrow">Why This Exists</span>
-        <h2 id="story-title">From missed Bitcoin<br>to practical tech.</h2>
-        <div class="divider"></div>
-        <div id="story-paragraphs">
-        <p>
-          I heard about Bitcoin early, understood just enough to know it mattered, and still
-          missed the moment. That turned into a long-running pattern: curiosity first, confusion
-          second, hard-earned lessons third.
-        </p>
-        <p>
-          Over time, Q2C became less about chasing moonshots and more about translating the
-          digital economy into something regular people can actually use. Wallet apps, reward
-          systems, AI tooling, self-custody, online income experiments, and the messy space
-          where emerging tech touches everyday life.
-        </p>
-        <div class="pull-quote" id="story-quote">
-          "If a tool only works for insiders, it is not finished yet."
-        </div>
-        <p>
-          ConcordiaPax is about bridging worlds. Q2C is one doorway into that mission: make
-          advanced systems more understandable, more honest, and more practical for the people
-          actually trying to build resilient lives.
-        </p>
-        <p>
-          <strong>I am not here to posture as a guru.</strong> I am here to test things,
-          document what is real, flag what is risky, and leave readers with more clarity than
-          they had before they arrived.
-        </p>
-        </div>
-        <span class="story-tag" id="story-tag">Useful over flashy. Honest over loud. Human-first by default.</span>
-      </div>
-      <div class="story-orb-wrap rv">
-        <div class="story-orb">
-          <img id="story-icon" src="/media/images/q2c-icon.png" alt="Q2C Emblem">
+  <main id="main">
+    <!-- A. Hero -->
+    <section id="hero">
+      <div class="wrap">
+        <span class="eyebrow">Quarters2Crypto · A builder's notebook</span>
+        <h1>Building things<br>to see what happens.</h1>
+        <p class="lede">Experiments at the edge of AI, autonomy, computation, crypto, and ordinary life. Practical systems, weird builds, and the occasional detour into the cosmos — documented honestly, hype not included.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#dispatches">Wander In</a>
+          <a class="btn btn-secondary" href="https://substack.com/@flaveon" target="_blank" rel="noopener">Subscribe on Substack</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════════════
-     WHAT'S HERE
-════════════════════════════════════════════════ -->
-<section id="what-here">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow" id="topics-eyebrow">Coverage Areas</span>
-      <h2 id="topics-title">The topic stack.</h2>
-      <div class="divider c"></div>
-      <p class="sec-sub" id="topics-subtitle">Coverage built around utility, literacy, and self-reliance in the digital economy.</p>
-    </div>
-    <div class="features" id="topics-grid">
-      <div class="f-card rv">
-        <span class="f-icon">🔬</span>
-        <h3>Wallet &amp; App Reviews</h3>
-        <p>What real users are being asked to trust right now, with attention to onboarding, fees, UX friction, and operational risk.</p>
-        <span class="badge b-free">Free</span>
-      </div>
-      <div class="f-card rv">
-        <span class="f-icon">📊</span>
-        <h3>Onchain Income Experiments</h3>
-        <p>Small-scale tests around rewards, incentives, and digital earning paths, with clear caveats about volatility and limits.</p>
-        <span class="badge b-free">Free</span>
-      </div>
-      <div class="f-card rv">
-        <span class="f-icon">🤖</span>
-        <h3>AI + Crypto Tooling</h3>
-        <p>Workflows, assistants, OCR, automation, and research tools that make technical systems more usable for everyday builders.</p>
-        <span class="badge b-free">Free</span>
-      </div>
-      <div class="f-card rv">
-        <span class="f-icon">🛡️</span>
-        <h3>Security &amp; Self-Custody</h3>
-        <p>Wallet hygiene, authentication habits, scam patterns, and practical safeguards for people holding their own keys and accounts.</p>
-        <span class="badge b-sub">Newsletter</span>
-      </div>
-      <div class="f-card rv">
-        <span class="f-icon">📰</span>
-        <h3>Market Context Without Theater</h3>
-        <p>What changed, why it matters, and how to think about it without influencer melodrama or fake certainty.</p>
-        <span class="badge b-free">Free</span>
-      </div>
-      <div class="f-card rv">
-        <span class="f-icon">🌉</span>
-        <h3>Real-World Bridge Cases</h3>
-        <p>Where digital assets, online commerce, creators, communities, and practical technology start connecting in useful ways.</p>
-        <span class="badge b-sub">Newsletter</span>
-      </div>
-    </div>
-    <p class="features-note" id="topics-note">Useful over flashy. Signal over slogans.</p>
-  </div>
-</section>
+    <div class="wrap"><hr class="rule"></div>
 
-<!-- ═══════════════════════════════════════════════
-     HOW IT WORKS
-════════════════════════════════════════════════ -->
-<section id="how-it-works">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow" id="model-eyebrow">The Model</span>
-      <h2 id="model-title">How Q2C works.</h2>
-      <div class="divider c"></div>
-    </div>
-    <div class="tiers" id="model-tiers">
-      <div class="tier t-free rv">
-        <span class="tier-label">Open Site</span>
-        <h3>Public Field Notes</h3>
-        <p class="tier-desc">The core layer: open, practical, and readable without insider vocabulary.</p>
-        <ul class="tier-list">
-          <li>Wallet and app teardowns</li>
-          <li>Plain-language explainers and quick guides</li>
-          <li>Market context and editorial framing</li>
-          <li>Security notes and caution flags</li>
-          <li>Working experiments and visible lessons</li>
-        </ul>
-      </div>
-      <div class="tier t-sub rv">
-        <span class="tier-label">Newsletter</span>
-        <h3>Deeper Briefings</h3>
-        <p class="tier-desc">Longer notes, earlier drafts, tighter workflows, and sharper context for people following closely.</p>
-        <ul class="tier-list">
-          <li>Tool shortlists and experiment logs</li>
-          <li>AI-assisted research briefings with clear caveats</li>
-          <li>Early looks at subscriber-only deep dives</li>
-          <li>Signal Pick with open and paid variants</li>
-          <li>More context around practical next steps</li>
-        </ul>
-        <p class="tier-note">The goal is not dependency. It is helping readers think, choose, and act for themselves.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     REBECCA'S PICK
-════════════════════════════════════════════════ -->
-<section id="rebeccas-pick">
-  <div class="wrap">
-    <div class="pick-wrap rv">
-      <span class="pick-icon">✦</span>
-      <h2><span id="signal-title">Signal Pick</span></h2>
-      <p id="signal-description">
-        One app, workflow, tool, or opportunity worth a closer look each cycle. AI can help with
-        research, but the point is still human judgment, clear caveats, and practical usefulness.
-      </p>
-
-      <!-- AI Disclosure -->
-      <div style="
-        margin: 0 auto 1.25rem;
-        max-width: 560px;
-        padding: 0.75rem 1.1rem;
-        border-radius: 10px;
-        background: rgba(99,102,241,0.1);
-        border: 1px solid rgba(99,102,241,0.25);
-        font-size: 0.78rem;
-        color: var(--muted);
-        line-height: 1.7;
-        text-align: left;
-      ">
-        <strong id="signal-ai-label" style="color:var(--indigo); letter-spacing:0.08em; text-transform:uppercase; font-size:0.66rem;">⚙ AI-Assisted Research</strong><br>
-        <span id="signal-ai-body">Signal Pick may be researched and first-drafted with AI support. All picks are reviewed, but they are not professionally certified or guaranteed. This is not financial advice. Not a recommendation to buy, sell, or use any product. All opinions are for informational purposes only. Do your own research before acting on anything here.</span>
-      </div>
-
-      <!-- Win / Loss Tracker -->
-      <div style="
-        margin: 0 auto 1.75rem;
-        max-width: 560px;
-        border-radius: 12px;
-        border: 1px solid rgba(245,166,35,0.18);
-        overflow: hidden;
-        font-size: 0.85rem;
-      ">
-        <div style="
-          background: rgba(19,27,36,0.8);
-          padding: 0.65rem 1.1rem;
-          font-size: 0.68rem; font-weight: 800;
-          letter-spacing: 0.16em; text-transform: uppercase;
-          color: var(--muted);
-          border-bottom: 1px solid rgba(245,166,35,0.12);
-          text-align: left;
-        " id="signal-record-title">Signal Pick — All-Time Record</div>
-        <div style="display:grid; grid-template-columns: repeat(3,1fr);">
-          <div style="padding:1rem; text-align:center; border-right:1px solid rgba(245,166,35,0.1);">
-            <div style="font-size:1.6rem; font-weight:800; color:#4ade80;" id="rp-wins">—</div>
-            <div style="font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.2rem;">Wins</div>
+    <!-- B. Dispatches + sponsor sidebar -->
+    <section class="block" id="dispatches" aria-labelledby="dispatches-title">
+      <div class="wrap with-sidebar">
+        <div>
+          <div class="section-head">
+            <span class="eyebrow">Dispatches</span>
+            <h2 id="dispatches-title">Notes from the workbench.</h2>
+            <p>Writing lives on Substack — lab notes, dispatches, and the occasional cosmic spiral. Highlights below; the full archive is one click out.</p>
           </div>
-          <div style="padding:1rem; text-align:center; border-right:1px solid rgba(245,166,35,0.1);">
-            <div style="font-size:1.6rem; font-weight:800; color:#f87171;" id="rp-losses">—</div>
-            <div style="font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.2rem;">Losses</div>
+          <div data-dispatches="3">
+            <!-- Static fallback: replaced by /content/dispatches.json when available -->
+            <div class="card-list">
+              <article class="card">
+                <p class="meta">Dispatch</p>
+                <h3><a href="https://flaveon.substack.com/p/the-man-in-the-arena" target="_blank" rel="noopener">The Man in the Arena</a></h3>
+                <p>A reflection on showing up, getting in the ring, and what the arena actually costs.</p>
+              </article>
+              <article class="card">
+                <p class="meta">Meta</p>
+                <h3><a href="https://flaveon.substack.com/p/quarters2crypto-a-confession" target="_blank" rel="noopener">Quarters2Crypto: A Confession</a></h3>
+                <p>What Q2C was, what it became, and why the notebook stays public.</p>
+              </article>
+            </div>
           </div>
-          <div style="padding:1rem; text-align:center;">
-            <div style="font-size:1.6rem; font-weight:800; color:var(--gold);" id="rp-pending">—</div>
-            <div style="font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.2rem;">Pending</div>
+          <p style="margin-top:1.4rem">
+            <a class="card-link" href="/articles.html">All articles →</a>
+          </p>
+        </div>
+
+        <!-- The sponsor bit -->
+        <aside class="sponsor-module" aria-label="Sponsor">
+          <span class="eyebrow" style="color:var(--cpax-gold)">Today's suspiciously familiar sponsor</span>
+          <h3>CPAX General Store</h3>
+          <p>Merch, oddities, and general-store goods from the wider ConcordiaPax universe. We hear the proprietor is extremely hands-on.</p>
+          <p><a class="card-link" href="https://www.etsy.com/shop/CpaxGeneralStore" target="_blank" rel="noopener sponsored">Visit the store →</a></p>
+          <p class="fine-print">Yes, this is a self-sponsorship. No, we will not be taking questions.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- C. Listen / Watch -->
+    <section class="block" aria-labelledby="listen-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Listen / Watch</span>
+          <h2 id="listen-title">The channel.</h2>
+          <p>Video and audio experiments, builds narrated aloud, and whatever the microphone catches. The YouTube channel is home base.</p>
+        </div>
+        <div class="social-strip">
+          <a href="https://youtube.com/@flaveon" target="_blank" rel="noopener">
+            <span class="label">YouTube — @flaveon</span>
+            <span class="note">Watch the experiments, narrated.</span>
+          </a>
+          <a href="https://flaveon.substack.com" target="_blank" rel="noopener">
+            <span class="label">Podcast feed</span>
+            <span class="note">Audio versions ride along with the Substack archive.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- D. Projects teaser -->
+    <section class="block" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Projects / Experiments</span>
+          <h2 id="projects-title">Things being built.</h2>
+          <p>Active and past experiments — software, research, games, and unusual ideas. None of them are pitch decks.</p>
+        </div>
+        <div data-projects="featured">
+          <div class="project-grid">
+            <article class="card">
+              <p class="meta"><span class="pill pill-active">active</span> · Absurdist Software</p>
+              <h3>The Finance Manager</h3>
+              <p>An experimental ledger that diligently tracks a balance and conspicuously never buys anything.</p>
+              <a class="card-link" href="/finance_manager/">Open the ledger →</a>
+            </article>
+            <article class="card">
+              <p class="meta"><span class="pill pill-incubating">incubating</span> · Game / Narrative</p>
+              <h3>TIME MACHINE</h3>
+              <p>A narrative RPG in design phase. The world is already lost — your job is to understand why.</p>
+              <a class="card-link" href="/lab.html#time-machine">Integration slot →</a>
+            </article>
           </div>
         </div>
-        <div style="
-          padding: 0.5rem 1.1rem;
-          background: rgba(10,1,24,0.4);
-          font-size: 0.7rem; color: rgba(182,176,167,0.6);
-          font-style: italic; text-align: left;
-          border-top: 1px solid rgba(245,166,35,0.08);
-        " id="signal-tracker-note">Tracker launches with the first published review framework. Outcomes will be defined by stated criteria, not hindsight marketing.</div>
+        <p style="margin-top:1.4rem">
+          <a class="card-link" href="/projects.html">Browse all projects →</a>
+        </p>
       </div>
+    </section>
 
-      <div class="pick-badges" id="signal-badges">
-        <span class="pick-badge pb-free">Open Brief</span>
-        <span class="pick-badge pb-paid">Deep Brief</span>
-      </div>
-      <a id="signal-cta" href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-fill">Subscribe for the Deep Briefs</a>
-      <p class="pick-disclaimer" id="signal-disclaimer">
-        AI-assisted. Human-reviewed. Advisory when uncertainty is high. Personal opinion, not professional guidance.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     COMING
-════════════════════════════════════════════════ -->
-<section id="coming">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow" id="roadmap-eyebrow">Roadmap</span>
-      <h2 id="roadmap-title">Where this is going.</h2>
-      <div class="divider c"></div>
-      <p class="sec-sub" id="roadmap-subtitle">Q2C is one bridge inside the wider ConcordiaPax ecosystem.</p>
-    </div>
-    <div class="roadmap" id="roadmap-grid">
-      <div class="rm-card rv">
-        <div class="rm-num">Phase 01</div>
-        <h3>Editorial Lab</h3>
-        <p>Site, newsletter, guides, and a cleaner archive of field-tested notes people can actually reuse.</p>
-        <span class="rm-status">In Motion</span>
-      </div>
-      <div class="rm-card rv">
-        <div class="rm-num">Phase 02</div>
-        <h3>Tooling Bench</h3>
-        <p>Checklists, calculators, dashboards, and small utilities that reduce friction around digital assets and online systems.</p>
-        <span class="rm-status">Coming Soon</span>
-      </div>
-      <div class="rm-card rv">
-        <div class="rm-num">Phase 03</div>
-        <h3>AI for Regular People</h3>
-        <p>Applied AI workflows that support literacy, research, and execution without pretending everyone wants to become an engineer.</p>
-        <span class="rm-status">In Design</span>
-      </div>
-      <div class="rm-card rv">
-        <div class="rm-num">Phase 04</div>
-        <h3>Digital Economy Guides</h3>
-        <p>More grounded coverage of commerce rails, creator tooling, reward systems, and where crypto intersects with ordinary work.</p>
-        <span class="rm-status">In Development</span>
-      </div>
-      <div class="rm-card rv">
-        <div class="rm-num">Phase 05</div>
-        <h3>Security Literacy</h3>
-        <p>Simple risk habits, account hygiene, and self-custody education that helps readers become more independent and resilient.</p>
-        <span class="rm-status">Planned</span>
-      </div>
-      <div class="rm-card rv">
-        <div class="rm-num">Phase 06</div>
-        <h3>ConcordiaPax Bridge</h3>
-        <p>Stronger connective tissue between Q2C, practical AI systems, and the broader ConcordiaPax mission of useful technology.</p>
-        <span class="rm-status">Planned</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     FINAL CTA
-════════════════════════════════════════════════ -->
-<section id="cta-final">
-  <div class="wrap" style="position:relative; text-align:center;">
-    <div class="cta-glow"></div>
-    <div class="rv">
-      <span class="eyebrow" id="final-cta-eyebrow">Start Here</span>
-      <h2 id="final-cta-title">Start with the <span>useful stuff</span>.</h2>
-      <div class="divider c"></div>
-      <p id="final-cta-description">Follow the field notes, keep the caveats, and use what helps. Leave the theater behind.</p>
-      <div class="cta-row">
-        <a id="final-cta-primary" href="#story" class="btn btn-fill">Read the Origin</a>
-        <a id="final-cta-secondary" href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener" class="btn btn-outline">Subscribe for Updates</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     LEGAL
-════════════════════════════════════════════════ -->
-<section id="legal">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow" id="legal-eyebrow">Important Disclosures</span>
-      <h2 id="legal-title">Legal &amp; Disclaimers</h2>
-      <div class="divider c"></div>
-    </div>
-
-    <div class="legal-grid" id="legal-summary-grid">
-      <div class="l-block rv">
-        <h3>Not Financial Advice</h3>
-        <p>All content published on Quarters2Crypto — including articles, reviews, newsletters, videos, and social media posts — is for <strong style="color:var(--text)">informational and entertainment purposes only</strong>. Nothing on this site constitutes financial advice, investment advice, trading advice, or any other form of professional financial guidance of any kind.</p>
-      </div>
-      <div class="l-block rv">
-        <h3>Not a Fiduciary</h3>
-        <p>Flaveon and Quarters2Crypto are <strong style="color:var(--text)">not registered investment advisors, broker-dealers, financial planners, or fiduciaries</strong> of any kind. We hold no professional financial licenses. We are not qualified to, and do not provide, personalized financial, legal, or tax advice under any circumstances.</p>
-      </div>
-      <div class="l-block rv">
-        <h3>Do Your Own Research</h3>
-        <p>Crypto assets are <strong style="color:var(--text)">highly speculative and volatile</strong>. Past performance is not indicative of future results. Any mention of specific projects, platforms, tokens, or strategies reflects personal experience and opinion only. Always conduct thorough independent due diligence before making any financial decision.</p>
-      </div>
-      <div class="l-block rv">
-        <h3>Experimental Content</h3>
-        <p>Some coverage here involves emerging tools, experimental workflows, or early-stage systems. We aim to <strong style="color:var(--text)">tell the truth clearly about what is known, what is uncertain, and what is still being tested</strong>. Not every experiment becomes a recommendation.</p>
-      </div>
-    </div>
-
-    <div id="legal-detail-blocks">
-    <div class="l-full rv">
-      <h3>Technology &amp; AI Content</h3>
-      <p>
-        Quarters2Crypto may feature automation, AI-assisted research, and software-oriented workflows. These materials are presented <strong style="color:var(--text)">for informational and educational purposes only</strong>. We do not guarantee that any tool, model, service, or workflow will be suitable for your environment, your business, or your risk tolerance.
-        <br><br>
-        AI-assisted outputs may be incomplete, mistaken, stale, or context-limited. When uncertainty is high or consequences are material, advisory framing matters more than speed.
-        <br><br>
-        <strong style="color:var(--gold)">Use judgment. Verify important claims. Treat convenience as a tool, not as proof.</strong>
-      </p>
-    </div>
-
-    <div class="l-full rv">
-      <h3>Cryptocurrency Risk Warning</h3>
-      <p>
-        Investing in, trading, or otherwise engaging with cryptocurrencies and digital assets carries <strong style="color:var(--text)">significant financial risk</strong>, including the possibility of total and permanent loss of capital. The cryptocurrency market is largely unregulated in many jurisdictions, subject to extreme price volatility, susceptible to hacking, technical failure, and fraud, and may be materially affected by regulatory changes at any time and without notice.
-        <br><br>
-        Wallet usage, onchain incentives, protocol participation, yield strategies, and new digital platforms carry additional smart contract risk, counterparty risk, operational risk, and liquidity risk. Examples discussed on this site are <strong style="color:var(--text)">not typical and not guaranteed</strong>.
-        <br><br>
-        <strong style="color:var(--gold)">Only engage with capital, platforms, and workflows you are prepared to evaluate and, if necessary, walk away from entirely.</strong>
-      </p>
-    </div>
-
-    <div class="l-full rv">
-      <h3>Affiliate &amp; Sponsorship Disclosure</h3>
-      <p>
-        Some content on this site may involve affiliate relationships, referral codes, or sponsored placements. When this is the case, it will be <strong style="color:var(--text)">clearly and prominently disclosed</strong> within the relevant content prior to or at the point of any recommendation. Affiliate relationships do not influence our editorial decisions, assessments, or ratings. We only feature platforms and products we have personally evaluated. Compensation received, if any, does not constitute an endorsement of quality, safety, or suitability for any particular user.
-      </p>
-    </div>
-    </div>
-
-    <div class="legal-stamp">
-      <p id="legal-stamp-line-1">© 2026 Quarters2Crypto &nbsp;·&nbsp; quarters2crypto.com &nbsp;·&nbsp; All rights reserved.</p>
-      <p id="legal-stamp-line-2">Practical field notes only. Not financial advice. Not legal advice. Not tax advice. Verify what matters and keep your own judgment switched on.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════════ -->
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img id="footer-logo" src="/media/images/q2c-logo.png" alt="Quarters2Crypto">
-        <p id="footer-brand-blurb">Practical field notes for the digital economy. Built in public by Flaveon. Useful over flashy.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <ul>
-          <li><a href="#story">Why Q2C</a></li>
-          <li><a href="#what-here">Topics</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#rebeccas-pick">Signal Pick</a></li>
-          <li><a href="#coming">Roadmap</a></li>
-          <li><a href="#legal">Legal</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <ul id="footer-connect-links">
-          <li><a href="https://substack.com/@quarters2crypto" target="_blank" rel="noopener">Newsletter</a></li>
-          <li><a href="https://www.youtube.com/channel/UC3O_UpBRqOg7PBhRPRUqhTw" target="_blank" rel="noopener">YouTube</a></li>
-          <li><a href="https://x.com/flaveon316" target="_blank" rel="noopener">Twitter / X</a></li>
-          <li><a href="https://github.com/Flaveon" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span id="footer-bottom-left">© 2026 Quarters2Crypto &nbsp;·&nbsp; Not financial advice.</span>
-      <span class="footer-tag" id="footer-bottom-right">Bridging crypto and real life.</span>
-    </div>
-  </div>
-</footer>
-
-<!-- ═══════════════════════════════════════════════
-     SCRIPTS
-════════════════════════════════════════════════ -->
-<script>
-function escapeHtml(value) {
-  return String(value)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
-
-function setText(id, value) {
-  const el = document.getElementById(id);
-  if (el && typeof value === 'string') {
-    el.textContent = value;
-  }
-}
-
-function setHTML(id, value) {
-  const el = document.getElementById(id);
-  if (el && typeof value === 'string') {
-    el.innerHTML = value;
-  }
-}
-
-function setHref(id, value) {
-  const el = document.getElementById(id);
-  if (el && typeof value === 'string' && value) {
-    el.setAttribute('href', value);
-  }
-}
-
-function setImageSrc(id, value) {
-  const el = document.getElementById(id);
-  if (el && typeof value === 'string' && value) {
-    el.setAttribute('src', value);
-  }
-}
-
-function renderParagraphs(paragraphs) {
-  return (paragraphs || []).map((text) => `<p>${escapeHtml(text)}</p>`).join('');
-}
-
-function renderLines(lines) {
-  return (lines || []).map((line) => escapeHtml(line)).join('<br>');
-}
-
-function renderSiteContent(data) {
-  if (!data) return;
-
-  if (data.meta) {
-    if (data.meta.title) {
-      document.title = data.meta.title;
-    }
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription && data.meta.description) {
-      metaDescription.setAttribute('content', data.meta.description);
-    }
-  }
-
-  if (data.branding) {
-    const heroBg = document.getElementById('hero-bg');
-    if (heroBg && data.branding.hero_image) {
-      heroBg.style.backgroundImage = `url("${data.branding.hero_image}")`;
-    }
-    ['nav-brand-icon', 'hero-icon', 'story-icon'].forEach((id) => setImageSrc(id, data.branding.icon_image));
-    setImageSrc('footer-logo', data.branding.logo_image);
-  }
-
-  if (data.hero) {
-    setText('hero-alias', data.hero.alias);
-    setHTML('hero-headline', renderLines(data.hero.headline_lines));
-    setText('hero-summary', data.hero.summary);
-    setText('hero-primary-cta', data.hero.primary_label);
-    setHref('hero-primary-cta', data.hero.primary_href);
-    setText('hero-secondary-cta', data.hero.secondary_label);
-    setHref('hero-secondary-cta', data.hero.secondary_href);
-    setHref('nav-subscribe-link', data.hero.secondary_href);
-  }
-
-  if (data.story) {
-    setText('story-eyebrow', data.story.eyebrow);
-    setHTML('story-title', renderLines(data.story.title_lines));
-    setHTML('story-paragraphs', renderParagraphs(data.story.paragraphs));
-    setText('story-quote', data.story.quote);
-    setText('story-tag', data.story.tag);
-  }
-
-  if (data.topics) {
-    setText('topics-eyebrow', data.topics.eyebrow);
-    setText('topics-title', data.topics.title);
-    setText('topics-subtitle', data.topics.subtitle);
-    setText('topics-note', data.topics.note);
-    const topicsGrid = document.getElementById('topics-grid');
-    if (topicsGrid && Array.isArray(data.topics.items)) {
-      topicsGrid.innerHTML = data.topics.items.map((item) => `
-        <div class="f-card rv">
-          <span class="f-icon">${escapeHtml(item.icon)}</span>
-          <h3>${escapeHtml(item.title)}</h3>
-          <p>${escapeHtml(item.description)}</p>
-          <span class="badge ${item.badge_tone === 'newsletter' ? 'b-sub' : 'b-free'}">${escapeHtml(item.badge)}</span>
+    <!-- E. PHASEONE10841 -->
+    <section class="block" id="phaseone" aria-labelledby="phaseone-title" data-phaseone>
+      <div class="wrap">
+        <div class="phaseone-card">
+          <span class="meta">Meanwhile, in a brighter universe — <span data-phaseone-status>Launching Soon</span></span>
+          <h3 id="phaseone-title">PHASEONE10841</h3>
+          <p>An experiment universe that grew out of Q2C and declared its own identity: luminous, geometric, anime-influenced, and considerably louder about it. It lives on its own subdomain and obeys different physics.</p>
+          <a class="btn btn-secondary phaseone-cta" aria-disabled="true">Launching Soon</a>
+          <p class="meta" style="margin-top:0.9rem; opacity:0.75">portal opens at phaseone10841.quarters2crypto.com</p>
         </div>
-      `).join('');
-    }
-  }
+      </div>
+    </section>
 
-  if (data.model) {
-    setText('model-eyebrow', data.model.eyebrow);
-    setText('model-title', data.model.title);
-    const tiers = document.getElementById('model-tiers');
-    if (tiers && Array.isArray(data.model.tiers)) {
-      tiers.innerHTML = data.model.tiers.map((tier) => `
-        <div class="tier ${tier.tone === 'newsletter' ? 't-sub' : 't-free'} rv">
-          <span class="tier-label">${escapeHtml(tier.label)}</span>
-          <h3>${escapeHtml(tier.title)}</h3>
-          <p class="tier-desc">${escapeHtml(tier.description)}</p>
-          <ul class="tier-list">
-            ${(tier.items || []).map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
-          </ul>
-          ${tier.note ? `<p class="tier-note">${escapeHtml(tier.note)}</p>` : ''}
+    <!-- F. Time Machine -->
+    <section class="block" aria-labelledby="tm-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Interactive Experiment</span>
+          <h2 id="tm-title">TIME MACHINE.</h2>
+          <p>A 2D narrative RPG about a world that is already lost. Deep in design phase — its home page slot is reserved, polished, and waiting for the first playable slice.</p>
         </div>
-      `).join('');
-    }
-  }
+        <article class="card">
+          <p class="meta"><span class="pill pill-incubating">incubating</span> · Game / Narrative · Godot 4</p>
+          <h3>The world is already lost. Your job is to understand why.</h3>
+          <p>SNES-era aesthetic, pre-flood ancient civilization, 30–45 minute sessions. The full story, systems, and first playable build are being worked on — the Lab page carries the integration slot and the exact state of the build.</p>
+          <a class="card-link" href="/lab.html#time-machine">Check the integration slot →</a>
+        </article>
+      </div>
+    </section>
 
-  if (data.signal_pick) {
-    setText('signal-title', data.signal_pick.title);
-    setText('signal-description', data.signal_pick.description);
-    setText('signal-ai-label', `⚙ ${data.signal_pick.ai_notice_label}`);
-    setText('signal-ai-body', data.signal_pick.ai_notice_body);
-    setText('signal-record-title', data.signal_pick.record_title);
-    setText('signal-tracker-note', data.signal_pick.tracker_note);
-    setText('signal-cta', data.signal_pick.cta_label);
-    setHref('signal-cta', data.signal_pick.cta_href);
-    setText('signal-disclaimer', data.signal_pick.disclaimer);
-    const badges = document.getElementById('signal-badges');
-    if (badges && Array.isArray(data.signal_pick.badges)) {
-      badges.innerHTML = data.signal_pick.badges.map((badge) => `
-        <span class="pick-badge ${badge.tone === 'newsletter' ? 'pb-paid' : 'pb-free'}">${escapeHtml(badge.label)}</span>
-      `).join('');
-    }
-  }
-
-  if (data.roadmap) {
-    setText('roadmap-eyebrow', data.roadmap.eyebrow);
-    setText('roadmap-title', data.roadmap.title);
-    setText('roadmap-subtitle', data.roadmap.subtitle);
-    const roadmap = document.getElementById('roadmap-grid');
-    if (roadmap && Array.isArray(data.roadmap.items)) {
-      roadmap.innerHTML = data.roadmap.items.map((item) => `
-        <div class="rm-card rv">
-          <div class="rm-num">${escapeHtml(item.phase)}</div>
-          <h3>${escapeHtml(item.title)}</h3>
-          <p>${escapeHtml(item.description)}</p>
-          <span class="rm-status">${escapeHtml(item.status)}</span>
+    <!-- H. Social / Follow -->
+    <section class="block" aria-labelledby="follow-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Follow Along</span>
+          <h2 id="follow-title">Find the signal.</h2>
         </div>
-      `).join('');
-    }
-  }
-
-  if (data.cta_final) {
-    setText('final-cta-eyebrow', data.cta_final.eyebrow);
-    setHTML('final-cta-title', `${escapeHtml(data.cta_final.title_prefix)} <span>${escapeHtml(data.cta_final.title_highlight)}</span>${escapeHtml(data.cta_final.title_suffix)}`);
-    setText('final-cta-description', data.cta_final.description);
-    setText('final-cta-primary', data.cta_final.primary_label);
-    setHref('final-cta-primary', data.cta_final.primary_href);
-    setText('final-cta-secondary', data.cta_final.secondary_label);
-    setHref('final-cta-secondary', data.cta_final.secondary_href);
-  }
-
-  if (data.legal) {
-    setText('legal-eyebrow', data.legal.eyebrow);
-    setText('legal-title', data.legal.title);
-    const summaryGrid = document.getElementById('legal-summary-grid');
-    if (summaryGrid && Array.isArray(data.legal.summary_blocks)) {
-      summaryGrid.innerHTML = data.legal.summary_blocks.map((block) => `
-        <div class="l-block rv">
-          <h3>${escapeHtml(block.title)}</h3>
-          <p>${escapeHtml(block.body)}</p>
+        <div class="social-strip">
+          <a href="https://substack.com/@flaveon" target="_blank" rel="noopener">
+            <span class="label">Substack</span>
+            <span class="note">The newsletter — subscribe here</span>
+          </a>
+          <a href="https://youtube.com/@flaveon" target="_blank" rel="noopener">
+            <span class="label">YouTube</span>
+            <span class="note">Listen / Watch</span>
+          </a>
+          <a href="https://x.com/flaveon316" target="_blank" rel="noopener">
+            <span class="label">X</span>
+            <span class="note">@flaveon316</span>
+          </a>
+          <a href="https://www.instagram.com/quarters2crypto" target="_blank" rel="noopener">
+            <span class="label">Instagram</span>
+            <span class="note">@quarters2crypto</span>
+          </a>
         </div>
-      `).join('');
-    }
-    const detailBlocks = document.getElementById('legal-detail-blocks');
-    if (detailBlocks && Array.isArray(data.legal.detail_blocks)) {
-      detailBlocks.innerHTML = data.legal.detail_blocks.map((block) => `
-        <div class="l-full rv">
-          <h3>${escapeHtml(block.title)}</h3>
-          <p>${(block.paragraphs || []).map((paragraph) => `${escapeHtml(paragraph)}`).join('<br><br>')}</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <p><strong>Quarters2Crypto</strong> — a public builder's notebook, written from the workbench by Flaveon.</p>
+          <p>Q2C is the playground. <a href="https://concordiapax.com" target="_blank" rel="noopener">ConcordiaPax</a> is the serious systems and business work. Same hands, different gloves.</p>
         </div>
-      `).join('');
-    }
-    if (Array.isArray(data.legal.stamp_lines)) {
-      setText('legal-stamp-line-1', data.legal.stamp_lines[0] || '');
-      setText('legal-stamp-line-2', data.legal.stamp_lines[1] || '');
-    }
-  }
-
-  if (data.footer) {
-    setText('footer-brand-blurb', data.footer.brand_blurb);
-    setText('footer-bottom-left', data.footer.bottom_left);
-    setText('footer-bottom-right', data.footer.bottom_right);
-    const links = document.getElementById('footer-connect-links');
-    if (links && Array.isArray(data.footer.connect_links)) {
-      links.innerHTML = data.footer.connect_links.map((link) => `
-        <li><a href="${escapeHtml(link.url)}" target="_blank" rel="noopener">${escapeHtml(link.label)}</a></li>
-      `).join('');
-    }
-  }
-}
-
-async function loadSiteContent() {
-  try {
-    const response = await fetch('content/site.json', { cache: 'no-store' });
-    if (!response.ok) {
-      throw new Error(`Failed to load content/site.json: ${response.status}`);
-    }
-    return await response.json();
-  } catch (error) {
-    console.warn('Q2C content loader fell back to static HTML.', error);
-    return null;
-  }
-}
-
-/* ── STARFIELD ───────────────────────────────────── */
-function initStarfield() {
-  const canvas = document.getElementById('starfield');
-  const ctx    = canvas.getContext('2d');
-  let   stars  = [];
-  const N      = 190;
-  const COLORS = ['#fffdf8', '#7e73a9', '#b68558', '#7fd1c4', '#f5a623'];
-
-  function resize() {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-
-  function seed() {
-    stars = Array.from({ length: N }, () => ({
-      x:  Math.random() * canvas.width,
-      y:  Math.random() * canvas.height,
-      r:  Math.random() * 1.35 + 0.15,
-      a:  Math.random() * 0.65 + 0.3,
-      sp: Math.random() * 0.18 + 0.04,
-      tw: Math.random() * Math.PI * 2,
-      c:  COLORS[Math.floor(Math.random() * COLORS.length)]
-    }));
-  }
-
-  function frame() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (const s of stars) {
-      s.tw += 0.011;
-      const a = s.a * (0.55 + 0.45 * Math.sin(s.tw));
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = s.c;
-      ctx.globalAlpha = a;
-      ctx.fill();
-      s.y -= s.sp * 0.09;
-      if (s.y < -2) {
-        s.y = canvas.height + 2;
-        s.x = Math.random() * canvas.width;
-      }
-    }
-    ctx.globalAlpha = 1;
-    requestAnimationFrame(frame);
-  }
-
-  window.addEventListener('resize', () => {
-    resize();
-    seed();
-  }, { passive: true });
-
-  resize();
-  seed();
-  requestAnimationFrame(frame);
-}
-
-/* ── NAV SCROLL ──────────────────────────────────── */
-function initNavScroll() {
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 50);
-  }, { passive: true });
-}
-
-/* ── HAMBURGER ───────────────────────────────────── */
-function initHamburger() {
-  const btn = document.getElementById('hamburger');
-  const links = document.getElementById('nav-links');
-  const toggle = () => links.classList.toggle('open');
-  btn.addEventListener('click', toggle);
-  btn.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') toggle();
-  });
-  links.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => links.classList.remove('open')));
-}
-
-/* ── ACTIVE NAV LINK ─────────────────────────────── */
-function initActiveNavLink() {
-  const sections = [...document.querySelectorAll('section[id]')];
-  const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
-  window.addEventListener('scroll', () => {
-    let cur = '';
-    for (const section of sections) {
-      if (window.scrollY >= section.offsetTop - 90) cur = section.id;
-    }
-    links.forEach((a) => {
-      a.classList.toggle('active', a.getAttribute('href') === `#${cur}`);
-    });
-  }, { passive: true });
-}
-
-/* ── SCROLL REVEAL ───────────────────────────────── */
-function initReveal() {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const parent = entry.target.parentElement;
-      const siblings = [...parent.querySelectorAll('.rv:not(.in)')];
-      const idx = siblings.indexOf(entry.target);
-      setTimeout(() => entry.target.classList.add('in'), Math.min(idx * 85, 380));
-      io.unobserve(entry.target);
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
-
-  document.querySelectorAll('.rv').forEach((el) => io.observe(el));
-}
-
-(async function bootstrapPage() {
-  const siteContent = await loadSiteContent();
-  if (siteContent) {
-    renderSiteContent(siteContent);
-  }
-  initStarfield();
-  initNavScroll();
-  initHamburger();
-  initActiveNavLink();
-  initReveal();
-})();
-</script>
-
+        <nav aria-label="Footer">
+          <a href="/articles.html">Articles</a>
+          <a href="/projects.html">Projects</a>
+          <a href="/lab.html">Lab</a>
+          <a href="/about.html">About</a>
+          <a href="/finance_manager/">Finance Manager</a>
+        </nav>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span data-year>2026</span> Quarters2Crypto · Nothing here is financial advice.</span>
+        <span>Built in public. Powered by coffee and curiosity.</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
