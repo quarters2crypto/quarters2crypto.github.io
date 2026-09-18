@@ -1,0 +1,59 @@
+{
+  "note": "Active and past experiments from the workbench. Status values: active, incubating, paused, shipped, archived.",
+  "projects": [
+    {
+      "title": "PHASEONE10841",
+      "status": "incubating",
+      "category": "Campaign / Universe",
+      "description": "A brighter, anime-influenced experiment universe that grew out of Q2C and declared its own identity. Currently charging its transformation sequence.",
+      "link": "/lab.html#phaseone",
+      "link_label": "Status report",
+      "featured": true
+    },
+    {
+      "title": "TIME MACHINE",
+      "status": "incubating",
+      "category": "Game / Narrative",
+      "description": "A 2D narrative RPG in design phase: pre-flood ancient civilization, SNES-era aesthetic, and a world that is already lost. Your job is to understand why.",
+      "link": "/lab.html#time-machine",
+      "link_label": "Integration slot",
+      "featured": true
+    },
+    {
+      "title": "The Finance Manager",
+      "status": "active",
+      "category": "Absurdist Software",
+      "description": "An experimental ledger that diligently tracks a balance and conspicuously never buys anything. Fully synthetic. Weirdly relatable.",
+      "link": "/finance_manager/",
+      "link_label": "Open the ledger",
+      "featured": true
+    },
+    {
+      "title": "Flaveon on Substack",
+      "status": "active",
+      "category": "Writing",
+      "description": "Dispatches, lab notes, and cosmic daydreaming. The primary publishing home for everything Q2C writes down.",
+      "link": "https://flaveon.substack.com",
+      "link_label": "Read on Substack",
+      "featured": true
+    },
+    {
+      "title": "Q2C Field Notes Archive",
+      "status": "archived",
+      "category": "Writing",
+      "description": "The earlier era of practical crypto field notes — wallet tests, security habits, and market context. Superseded by the newsletter, kept for the record.",
+      "link": "https://flaveon.substack.com/archive",
+      "link_label": "Browse the archive",
+      "featured": false
+    },
+    {
+      "title": "ConcordiaPax Bridge",
+      "status": "incubating",
+      "category": "Ecosystem",
+      "description": "The connective tissue between this playground and the serious systems work at ConcordiaPax. Q2C wanders; CPAX builds.",
+      "link": "https://concordiapax.com",
+      "link_label": "Visit ConcordiaPax",
+      "featured": false
+    }
+  ]
+}

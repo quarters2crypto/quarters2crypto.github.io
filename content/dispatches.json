@@ -1,0 +1,46 @@
+{
+  "publication": {
+    "name": "Flaveon on Substack",
+    "url": "https://flaveon.substack.com",
+    "subscribe_url": "https://substack.com/@flaveon",
+    "feed_url": "https://flaveon.substack.com/feed"
+  },
+  "note": "Curated highlights. The full archive lives on Substack — this list is maintained by hand via Pages CMS, not scraped.",
+  "posts": [
+    {
+      "title": "The Man in the Arena",
+      "date": "2026-08-24",
+      "url": "https://flaveon.substack.com/p/the-man-in-the-arena",
+      "kind": "Dispatch",
+      "description": "A 24th-anniversary reflection on showing up, getting in the ring, and what the arena actually costs."
+    },
+    {
+      "title": "Quarters2Crypto: A Confession",
+      "date": "2026-08-05",
+      "url": "https://flaveon.substack.com/p/quarters2crypto-a-confession",
+      "kind": "Meta",
+      "description": "The origin-story post: what Q2C was, what it became, and why the notebook stays public."
+    },
+    {
+      "title": "The Zen Den Incident: A Summary of Local AI, Snowflakes, and Marital Forbearance",
+      "date": "2026-07-19",
+      "url": "https://flaveon.substack.com/p/the-zen-den-incident-a-summary-of",
+      "kind": "Lab Notes",
+      "description": "Local AI meets household diplomacy. An incident report, lovingly over-documented."
+    },
+    {
+      "title": "The Mirror, The Mess, And The Machine",
+      "date": "2026-07-19",
+      "url": "https://flaveon.substack.com/p/the-mirror-the-mess-and-the-machine",
+      "kind": "Dispatch",
+      "description": "On working with AI that reflects you back — the useful parts and the uncomfortable ones."
+    },
+    {
+      "title": "The Night Becca Called Me Stardust",
+      "date": "2026-06-25",
+      "url": "https://flaveon.substack.com/p/the-night-becca-called-me-stardust",
+      "kind": "Cosmic",
+      "description": "A cosmic-daydreaming entry. You are made of star-stuff; the implications are non-trivial."
+    }
+  ]
+}

@@ -27,8 +27,9 @@ settings:
       rename: "content(rename): {oldPath} -> {newPath}"
 
 content:
-  - name: homepage
-    label: Homepage content
+  - name: site_settings
+    label: Site settings
+    description: Global copy — hero, socials, sponsor, footer, and the PHASEONE live switch.
     type: file
     path: content/site.json
     format: json
@@ -43,33 +44,11 @@ content:
           - name: description
             label: Meta description
             type: text
-      - name: branding
-        label: Branding images
-        type: object
-        fields:
-          - name: hero_image
-            label: Hero background image
-            type: image
-            options:
-              media: site_images
-              path: ""
-          - name: icon_image
-            label: Brand icon
-            type: image
-            options:
-              media: site_images
-              path: ""
-          - name: logo_image
-            label: Brand logo
-            type: image
-            options:
-              media: site_images
-              path: ""
       - name: hero
         label: Hero
         type: object
         fields:
-          - name: alias
+          - name: eyebrow
             type: string
           - name: headline_lines
             label: Headline lines
@@ -89,227 +68,165 @@ content:
           - name: secondary_href
             label: Secondary CTA link
             type: string
-      - name: story
-        label: Story
+      - name: nav
+        label: Navigation
         type: object
         fields:
-          - name: eyebrow
-            type: string
-          - name: title_lines
-            label: Title lines
-            type: string
-            list: true
-          - name: paragraphs
-            label: Story paragraphs
-            type: text
-            list: true
-          - name: quote
-            type: text
-          - name: tag
-            type: string
-      - name: topics
-        label: Topics section
+          - name: phaseone
+            label: PHASEONE10841 entry
+            type: object
+            fields:
+              - name: label
+                type: string
+              - name: href
+                label: Destination URL
+                type: string
+              - name: live
+                label: Subdomain is live (flips cards from "Launching Soon" to a real link)
+                type: boolean
+              - name: status_label
+                type: string
+      - name: socials
+        label: Social links
         type: object
+        list: true
         fields:
-          - name: eyebrow
+          - name: label
             type: string
-          - name: title
-            type: string
-          - name: subtitle
-            type: text
           - name: note
             type: string
-          - name: items
-            label: Topic cards
-            type: object
-            list: true
-            fields:
-              - name: icon
-                type: string
-              - name: title
-                type: string
-              - name: description
-                type: text
-              - name: badge
-                type: string
-              - name: badge_tone
-                label: Badge tone
-                type: select
-                options:
-                  values:
-                    - value: free
-                      label: Free
-                    - value: newsletter
-                      label: Newsletter
-      - name: model
-        label: Access model
+          - name: url
+            type: string
+      - name: sponsor
+        label: Sponsor module
         type: object
         fields:
           - name: eyebrow
             type: string
           - name: title
             type: string
-          - name: tiers
-            label: Access tiers
-            type: object
-            list: true
-            fields:
-              - name: label
-                type: string
-              - name: title
-                type: string
-              - name: description
-                type: text
-              - name: items
-                label: Bullet items
-                type: string
-                list: true
-              - name: note
-                type: text
-              - name: tone
-                type: select
-                options:
-                  values:
-                    - value: free
-                      label: Free
-                    - value: newsletter
-                      label: Newsletter
-      - name: signal_pick
-        label: Signal Pick
-        type: object
-        fields:
-          - name: title
-            type: string
-          - name: description
+          - name: body
             type: text
-          - name: ai_notice_label
-            type: string
-          - name: ai_notice_body
-            type: text
-          - name: record_title
-            type: string
-          - name: tracker_note
-            type: text
-          - name: badges
-            type: object
-            list: true
-            fields:
-              - name: label
-                type: string
-              - name: tone
-                type: select
-                options:
-                  values:
-                    - value: free
-                      label: Free
-                    - value: newsletter
-                      label: Newsletter
           - name: cta_label
             type: string
-          - name: cta_href
+          - name: url
             type: string
-          - name: disclaimer
+          - name: fine_print
+            label: Fine print
             type: text
-      - name: roadmap
-        label: Roadmap
-        type: object
-        fields:
-          - name: eyebrow
-            type: string
-          - name: title
-            type: string
-          - name: subtitle
-            type: text
-          - name: items
-            label: Roadmap cards
-            type: object
-            list: true
-            fields:
-              - name: phase
-                type: string
-              - name: title
-                type: string
-              - name: description
-                type: text
-              - name: status
-                type: string
-      - name: cta_final
-        label: Final CTA
-        type: object
-        fields:
-          - name: eyebrow
-            type: string
-          - name: title_prefix
-            type: string
-          - name: title_highlight
-            type: string
-          - name: title_suffix
-            type: string
-          - name: description
-            type: text
-          - name: primary_label
-            type: string
-          - name: primary_href
-            type: string
-          - name: secondary_label
-            type: string
-          - name: secondary_href
-            type: string
-      - name: legal
-        label: Legal
-        type: object
-        fields:
-          - name: eyebrow
-            type: string
-          - name: title
-            type: string
-          - name: summary_blocks
-            label: Summary cards
-            type: object
-            list: true
-            fields:
-              - name: title
-                type: string
-              - name: body
-                type: text
-          - name: detail_blocks
-            label: Full legal blocks
-            type: object
-            list: true
-            fields:
-              - name: title
-                type: string
-              - name: paragraphs
-                type: text
-                list: true
-          - name: stamp_lines
-            label: Footer legal lines
-            type: text
-            list: true
       - name: footer
         label: Footer
         type: object
         fields:
           - name: brand_blurb
             type: text
-          - name: connect_links
-            label: Connect links
-            type: object
-            list: true
-            fields:
-              - name: label
-                type: string
-              - name: url
-                type: string
+          - name: concordiapax_note
+            type: text
           - name: bottom_left
             type: string
           - name: bottom_right
             type: string
 
-  - name: emergency_html
-    label: Emergency HTML editor
+  - name: dispatches
+    label: Dispatches (Substack highlights)
+    description: Curated list of featured posts. The full archive lives on Substack; this list is maintained by hand.
+    type: file
+    path: content/dispatches.json
+    format: json
+    fields:
+      - name: posts
+        label: Featured posts
+        type: object
+        list: true
+        fields:
+          - name: title
+            type: string
+          - name: date
+            label: Date (YYYY-MM-DD)
+            type: date
+          - name: url
+            label: Substack URL
+            type: string
+          - name: kind
+            label: Kind (Dispatch / Lab Notes / Meta / Cosmic)
+            type: string
+          - name: description
+            type: text
+
+  - name: projects
+    label: Projects
+    description: "The workbench list. Status: active, incubating, paused, shipped, archived. Featured projects appear on the homepage."
+    type: file
+    path: content/projects.json
+    format: json
+    fields:
+      - name: projects
+        label: Projects
+        type: object
+        list: true
+        fields:
+          - name: title
+            type: string
+          - name: status
+            type: select
+            options:
+              values:
+                - value: active
+                  label: Active
+                - value: incubating
+                  label: Incubating
+                - value: paused
+                  label: Paused
+                - value: shipped
+                  label: Shipped
+                - value: archived
+                  label: Archived
+          - name: category
+            type: string
+          - name: description
+            type: text
+          - name: link
+            type: string
+          - name: link_label
+            type: string
+          - name: featured
+            label: Show on homepage
+            type: boolean
+
+  - name: page_home
+    label: Homepage HTML (advanced)
     type: file
     path: index.html
+    format: code
+
+  - name: page_articles
+    label: Articles page HTML (advanced)
+    type: file
+    path: articles.html
+    format: code
+
+  - name: page_projects
+    label: Projects page HTML (advanced)
+    type: file
+    path: projects.html
+    format: code
+
+  - name: page_lab
+    label: Lab page HTML (advanced)
+    type: file
+    path: lab.html
+    format: code
+
+  - name: page_about
+    label: About page HTML (advanced)
+    type: file
+    path: about.html
+    format: code
+
+  - name: page_finance_manager
+    label: Finance Manager page HTML (advanced)
+    type: file
+    path: finance_manager/index.html
     format: code
 
   - name: brand_tokens
@@ -322,6 +239,18 @@ content:
     label: Brand theme CSS
     type: file
     path: brand-kit/cpax-q2c-theme.css
+    format: code
+
+  - name: site_css
+    label: Site CSS (advanced)
+    type: file
+    path: assets/css/site.css
+    format: code
+
+  - name: site_js
+    label: Site JS (advanced)
+    type: file
+    path: assets/js/site.js
     format: code
 
   - name: brand_style_brief
